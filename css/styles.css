@@ -46,6 +46,9 @@ a.nav-link:before {
 a.nav-link:hover:before {
   transform: scaleX(1);
 }
+a.nav-link.nuxt-link-exact-active:before {
+  transform: scaleX(1);
+}
 .nav-link-icon {
   fill: var(--teal-9)
 }
@@ -76,8 +79,6 @@ a.nav-link:hover:before {
 .content-area{
   margin: 0 auto;
 }
-
-
 
 /* spacing */
 
