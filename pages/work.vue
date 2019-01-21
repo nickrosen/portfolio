@@ -68,7 +68,21 @@
 <script>
   import IconLaunch from '~/components/IconLaunch.vue'
   export default {
-    components: { IconLaunch }
+    components: { IconLaunch },
+    data() {
+      return {
+        title: 'Nick Rosen | Work'
+      }
+    },
+    head () {
+      return {
+          title: this.title,
+          meta: [
+              // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+              { hid: 'description', name: 'description', content: 'Nick Rosen Portfolio Recent Work Page' }
+          ]
+      }
+    }
   }
 </script>
 
