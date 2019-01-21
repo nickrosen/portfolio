@@ -38,47 +38,5 @@
 </script>
 
 <style scoped>
-.py-40{
-  padding-top: 64px;
-  padding-bottom: 64px;
-}
-.title-area{
-  margin-right: 32px;
-  flex-grow: 1;
-}
-@media only screen and (max-width: 936px) {
-  .work-row {
-    justify-content: center;
-  }
-  .frame{
-    order: 1;
-  }
-  .right-col, .left-col{
-    order: 2;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .title-area{
-    margin-right: 0;
-  }
-}
-
-.mt-0 {
-  margin-top: 0;
-}
-.pt-17{
-  padding-top: 17px;
-}
-.filler{
-  height: 100%;
-  width: 100%;
-  background-color: red;
-}
-.text-offset{
-  margin-left: 80px;
-}
-.pr-36{
-  padding-right: 36px;
-}
 
 </style>

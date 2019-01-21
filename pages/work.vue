@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="content-area mt-24">
-      <div class="flex row wrap pb-94 work-row">
+      <div class="flex row wrap pb-94 justify-center">
         <div class="frame">
           <img src="~/assets/img/soldkey.jpg">
         </div>
@@ -24,7 +24,7 @@
           </a>
         </div>
       </div>
-      <div class="flex row wrap pb-94 work-row">
+      <div class="flex row wrap pb-94 justify-center">
         
         <div class="left-col pt-40">
           <div class="blue-bg-11 border-y mb-24">
@@ -43,7 +43,7 @@
           <img src="~/assets/img/aw.jpg">
         </div>
       </div>
-      <div class="flex row wrap pb-94 work-row">
+      <div class="flex row wrap pb-94 justify-center">
         <div class="frame">
           <img src="~/assets/img/eset.jpg">
         </div>
@@ -73,39 +73,28 @@
 </script>
 
 <style scoped>
+/* elements */
 
-.tl{
-  position: relative;
-  left: -120px;
+p{
+  margin-top: 8px;
   margin-bottom: 24px;
 }
-.pt-40{
-  padding-top: 40px;
-}
-.py-36{
-  padding-top: 36px;
-  padding-bottom: 36px;
-}
-.pb-94{
-  /* padding-top: 36px; */
-  padding-bottom: 94px;
+h3{
+  margin: 0;
 }
 
-.work-title{
-  margin-top: 0;
-}
-.launch-icon{
-  fill: var(--blue-1);
-  transition: all 0.5s ease;
+img{
+  width: 100%;
+  max-width: 460px;
+  min-width: 200px;
+  border-radius: 4px;
 }
 a.work-link{
   display: inline-flex;
   align-items: center;
-  /* background-color: var(--grey-1); */
   text-decoration: none;
   font-weight: 400;
   color: var(--blue-1);
-  /* font-weight: bold; */
   padding: 8px 16px;
   border-left: 2px solid var(--blue-1);
   border-top: 2px solid var(--blue-1);
@@ -121,36 +110,16 @@ a.work-link:hover{
 a.work-link:hover > .launch-icon{
   fill: var(--blue-10);
 }
-
-
-p{
-  margin-top: 8px;
-  margin-bottom: 24px;
+.launch-icon{
+  fill: var(--blue-1);
+  transition: all 0.5s ease;
 }
-h3{
-  margin: 0;
-}
-.work-card{
-  border: 2px solid var(--blue-10);
-  border-radius: 4px;
-  overflow: hidden;
-  grid-column: span 2;
-}
-.work-card > div{
-  padding: 0 18px;
-}
-.grid{
-  display: grid;
-  grid-gap: 36px;
-  grid-template-columns: repeat(4, 1fr)
-}
-img{
-  width: 100%;
-  max-width: 460px;
-  min-width: 200px;
-  border-radius: 4px;
-}
-.mb-64{
-  margin-bottom: 64px;
+@media only screen and (max-width: 936px) {
+  .frame{
+    order: 1;
+  }
+  .right-col, .left-col{
+    order: 2;
+  }
 }
 </style>
