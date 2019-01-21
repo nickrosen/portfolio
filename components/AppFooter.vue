@@ -4,20 +4,20 @@
       <div class="flex row wrap space-between border">
         <div class="flex row wrap">
           <div class="py-18">
-            <a href="#" class="nav-link flex align-center mr-36">
+            <a href="mailto:hinickrosen@gmail.com?Subject=Hello" target="_top" class="nav-link flex align-center mr-36">
               <icon-email class="nav-link-icon mr-6"/>
               <span>HiNickRosen@gmail.com</span>
             </a>
           </div>
           <div class="py-18">
-            <a href="#" class="nav-link flex align-center mr-36">
+            <a href="https://twitter.com/NickRosenSD" target="_blank" class="nav-link flex align-center mr-36">
               <icon-twitter class="nav-link-icon mr-6"/>
               <span>NickRosenSD</span>
             </a>
           </div>
         </div>
         <div class="py-18">
-          <a href="#" class="nav-link flex align-center">
+          <a href="https://github.com/nickrosen/portfolio" target="_blank" class="nav-link flex align-center">
             <icon-code class="nav-link-icon mr-6"/>
             <span>Code</span>
           </a>
