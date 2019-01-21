@@ -24,41 +24,32 @@
         <div class="col-4">
           <h3>Listening</h3>
           <ul>
-            <li>
-              Syntax
-            </li>
-            <li>
-              Shoptalk Show
-            </li>
-            <li>
-              Full Stack Radio
-            </li>
-            <li>
-              Javascript Jabber
-            </li>
-            <li>
-              Front End Happy Hour
-            </li>
+            <li><a href="https://syntax.fm/" target="_blank">Syntax</a></li>
+            <li><a href="https://shoptalkshow.com/" target="_blank">Shoptalk Show</a></li>
+            <li><a href="http://www.fullstackradio.com/" target="_blank">Full Stack Radio</a></li>
+            <li><a href="https://devchat.tv/js-jabber/" target="_blank">Javascript Jabber</a></li>
+            <li><a href="https://frontendhappyhour.com/" target="_blank">Front End Happy Hour</a></li>
           </ul>
         </div>
         <div class="col-4">
           <h3>Reading</h3>
           <ul>
-            <li>CSS Tricks</li>
-            <li>Stack Overflow</li>
-            <li>Smashing Magazine</li>
-            <li>Refactoring UI</li>
-            <li>Medium</li>
+            <li><a href="https://css-tricks.com/" target="_blank">CSS Tricks</a></li>
+            <li><a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a></li>
+            <li><a href="https://www.smashingmagazine.com/" target="_blank">Smashing Magazine</a></li>
+            <li><a href="https://refactoringui.com/" target="_blank">Refactoring UI</a></li>
+            <li><a href="https://dev.to/" target="_blank">Dev.to</a></li>
+            <li><a href="https://medium.com/" target="_blank">Medium</a></li>
           </ul>
         </div>
         <div class="col-4">
           <h3>Watching</h3>
           <ul>
-            <li>Front End Masters</li>
-            <li>Youtube</li>
-            <li>Udemy</li>
-            <li>Pluralsight</li>
-            <li>Wes Bos</li>
+            <li><a href="https://frontendmasters.com/" target="_blank">Front End Masters</a></li>
+            <li><a href="https://www.youtube.com/" target="_blank">Youtube</a></li>
+            <li><a href="https://www.udemy.com/" target="_blank">Udemy</a></li>
+            <li><a href="https://www.pluralsight.com/" target="_blank">Pluralsight</a></li>
+            <li><a href="https://wesbos.com/courses/" target="_blank">Wes Bos</a></li>
           </ul>
         </div>
       </div>
@@ -73,5 +64,10 @@
 </script>
 
 <style scoped>
-
+li{
+  line-height: 1.5;
+}
+li > a{
+  color: var(--blue-2)
+}
 </style>
