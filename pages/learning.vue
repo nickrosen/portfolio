@@ -11,7 +11,7 @@
       </div>
       <div class="flex row wrap justify-center">
         <div class=left-col>
-          <p>The best advice I've obtained about learning is simply to learn one thing at a time.  As a front end developer and inhernetly curious human being I am constantly learning something.  I keep a running list of topics I'd like to learn and am constantly rearraging adding to and checking items off of it.</p>
+          <p>The best advice I've obtained about learning is simply to learn one thing at a time.  As a front end developer and inhernetly curious human being I am always learning something.  I keep a running list of topics I'd like to learn and am constantly rearraging adding to and checking items off of it.</p>
         </div>
         <div class="right-col">
           <p>I love the study required to keep up with this fast moving field.  In addition to the resources below, I've found twitter to be an amazing asset for staying up to date with the latest and greatest in web development.</p>
