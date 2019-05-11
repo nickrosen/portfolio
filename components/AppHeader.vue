@@ -1,58 +1,65 @@
 <template>
-	<section>
-		<header class="container">
-			<div class="flex row space-between align-center border">
-				<div id="header-logo" class="py-18">
-					<nuxt-link to="/" class="flex align-center nav-link">Nick Rosen</nuxt-link>
-				</div>
-				<nav id="header-nav">
-					<ul class="flex row">
-						<li
-							v-for="(item, index) in navItems"
-							:key="index"
-							class="py-18"
-						>
-							<nuxt-link class="nav-link" :to="item.link">{{item.title}}</nuxt-link>
-						</li>
-					</ul>
-				</nav>
-			</div>
-		</header>
-	</section>
+  <section>
+    <header class="header-container">
+      <div id="header-logo">
+        <nuxt-link
+          to="/"
+          class="nav-link"
+        >Nick Rosen</nuxt-link>
+      </div>
+      <nav id="header-nav">
+        <ul>
+          <li
+            v-for="(item, index) in navItems"
+            :key="index"
+          >
+            <nuxt-link
+              class="nav-link"
+              :to="item.link"
+            >{{item.title}}</nuxt-link>
+          </li>
+        </ul>
+      </nav>
+
+    </header>
+  </section>
 </template>
 
 <script>
-	import IconLogo from '~/components/IconLogo.vue'
-	export default {
-		components: { IconLogo },
-		data() {
-			return {
-				navItems: [
-					{title: 'About', link: '/about'},
-					{title: 'Work', link: '/work'},
-					{title: 'Learning', link: '/learning'},
-				]
-			}
-		}
-	}
+import IconLogo from "~/components/IconLogo.vue";
+export default {
+  components: { IconLogo },
+  data() {
+    return {
+      navItems: [
+        { title: "About me", link: "/about" },
+        { title: "Recent work", link: "/work" },
+        { title: "Get in touch", link: "/contact" }
+      ]
+    };
+  }
+};
 </script>
 
 <style scoped>
-.mr18{
-	margin-right: 18px;
+.header-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 60px;
+  /* border: 1px solid red; */
 }
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-li{
-	padding-left: 20px;
+li {
+  padding-left: 20px;
+  display: inline-block;
 }
-.border {
-  border-bottom: 1px solid var(--blue-10);
-}
-
-
-
 </style>

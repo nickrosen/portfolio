@@ -1,55 +1,57 @@
 <template>
-  <section class="grey-1 container flex row wrap">
-    <div class="title-area wave mt-24">
-      <div class="title-box blue-bg-11 py-12">
-        <h2 class="title">About Me</h2>
-      </div>
+  <section class="about-section">
+    <div>
+      <p><span class="page-title">My name is Nick Rosen, </span>I'm a web designer and developer based in San Diego, California. I work at Renovation Realty automating processes, building web apps and, managing digital advertising.</p>
+      <p>After trying, and not enjoying, a couple different career paths, I got into web development in 2011 and am so grateful to have found a job I love to do every day.</p>
+      <h3>I have worked on a wide range of projects over the years including:</h3>
+      <ul>
+        <li>Wordpress sites and plugins</li>
+        <li>Custom web and email frameworks</li>
+        <li>Web ads and landing pages</li>
+        <li>eCommerce sites and tools</li>
+        <li>Full Stack and Serverless web apps</li>
+        <li>CRM Customization & Automation</li>
+      </ul>
+      <h3>Using some of these technologies:</h3>
+      <ul>
+        <li>Adobe CC, Sketch, Affinity Design Suite for prototyping and design.</li>
+        <li>HTML, CSS, SCSS, Stylus, jQuery, JavaScript, AngularJS, Angular, React and Vue JS for client side code.</li>
+        <li>PHP, Node.js, Java, Python for server side code.</li>
+        <li>Gulp and Webpack to manage build processes.</li>
+        <li>MySQL, SQLite, PostgreSQL, MongoDB, and Firebase for databases.</li>
+        <li>Git and SVN for version control</li>
+      </ul>
     </div>
-    <div class="content-area mt-24">
-      <div class="flex row wrap justify-center">
-        <div class="left-col">
-          <div class="border-y mb-24">
-            <h2 class="headline">Professional</h2>
-          </div>
-          <div>
-            <p>I began my web dev career building Wordpress sites for friends and family members and quickly transitioned to contracting full time.</p>
-            <p>As a contractor, I was lucky enough to work with some great companies and digital agencies and had a chance to learn a lot about different types of web development as well as how business can effectively utilize digital channels to increase revenue.</p>
-            <p>After about 5 years of contracting, I was feeling a bit isolated and like my work had stagnated, so I decided to make a change and joined the web team at ESET.  At ESET, I was able to focus on front end development and really fell in love with the concept of using empathy to create web experiences that are intuitive and fun to use.  This was also my forst introduction to front end frameworks (Angular JS) and the beginning of my deep dive into the world of JS.</p>
-          </div>
-        </div>
-        <div class="right-col">
-          <p class="mt-0">I left ESET in the fall of 2018 to join Renovation Realty as Digital Strategy Director with the goals of launching 2 new businesses, SoldKey & Apartment Worth, single family and multifamily property iBuyers as well as revamping the web presence and marketing efforts of Renovation Realty.</p>
-          <p>To date, I have designed and built SoldKey.com and ApartmentWorth.com, implemented ads and remarketing using Google and Facebook ads, and configured Google Analytics and Data Studio for optimization.</p>
-          <div class="border-y mb-24">
-            <h2 class="headline">Personal</h2>
-          </div>
-          <p>I'm a San Diego native living in Sherman Heights with my fantastic wife Kat and our dog Cole.</p>
-          <p>I like learning, breakfast foods, solving problems with code, racing sailboats, music, books, puppies, economics, sandwiches, martinis, and other stuff.</p>   
-        </div>
-      </div>
+    <p class="fw">I’m looking to work on projects using modern technologies to solve interesting problems.</p>
+    <div class="text-wrapper">
+      <p>I live in Sherman Heights with my wife/bestie Kat and our black lab Cole. In my free time, I like to read, take classes online, and sail boats.</p>
+      <p>My favorite thing about being a web developer is learning new skills to solve problems.
+
+      </p>
     </div>
   </section>
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        title: 'Nick Rosen | About Me'
-      }
-    },
-    head () {
-      return {
-          title: this.title,
-          meta: [
-              // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-              { hid: 'description', name: 'description', content: 'About Nick Rosen' }
-          ]
-      }
-    }
+export default {
+  data() {
+    return {
+      title: "Nick Rosen | About Me"
+    };
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        { hid: "description", name: "description", content: "About Nick Rosen" }
+      ]
+    };
   }
+};
 </script>
 
 <style scoped>
-
+@media only screen and (min-width: 700px) {
+}
 </style>

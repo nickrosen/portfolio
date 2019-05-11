@@ -1,95 +1,51 @@
 <template>
-  <div class="flex-layout flex column space-between blue-bg-11">
-    <app-header class="mb-24" />
-    <nuxt />
-    <app-footer class="mt-48" />
+  <div class="flex-layout">
+    <div class="main-content">
+      <div class="content-wrapper">
+        <app-nav-bar class="app-nav" />
+        <!-- <div>col2</div> -->
+        <nuxt class="app-content" />
+        <img
+          class="selfie"
+          src="~/assets/img/me_crop.png"
+        >
+      </div>
+    </div>
+    <app-footer />
   </div>
 </template>
 <script>
-  import AppHeader from '~/components/AppHeader.vue'
-  import AppFooter from '~/components/AppFooter.vue'
-  export default {
-    components: { AppHeader, AppFooter }
-  }
+import AppFooter from "~/components/AppFooter.vue";
+import AppNavBar from "~/components/AppNavBar.vue";
+export default {
+  components: { AppNavBar, AppFooter }
+};
 </script>
 
-<style> 
-.justify-end{
-  justify-content: flex-end;
-}
-
-.mt-48 {
-  margin-top: 48px;
-}
-.f-border {
-  border-top: 1px solid var(--blue-10);
-}
-.my-60{
-  margin-top: 48px;
-  margin-bottom: 48px;
-}
-.mb-48{
-  margin-bottom: 48px;
-}
-
-.my-auto{
-  margin-top: auto;
-  margin-bottom: auto;
-}
-#initials{
-  font-size: 60vh;
-  font-family: 'PT Serif', serif;
-  font-weight: 700;
-  color: rgba(0, 0, 0, 0.3);
-  /* color: rgba(0, 0, 0, 0.1); */
+<style>
+.selfie {
   position: absolute;
-  top: 0;
-  left: -2vh;
-  z-index: 0;
+  bottom: 0;
+  left: 0;
+  width: 90vmin;
+  height: auto;
 }
-.rel{
+.flex-layout {
+  background: hsl(210, 83%, 53%);
+  padding: 20px 20px 0;
+}
+.main-content {
+  background: hsl(216, 33%, 97%);
+  box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.1);
+}
+.content-wrapper {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 20px;
+  min-height: calc(100vh - 80px);
+  display: grid;
+  grid-template-columns: 240px 1fr;
   position: relative;
 }
-.py-18{
-  padding-top: 18px;
-  padding-bottom: 18px;
-}
-.px-18 {
-  padding-left: 18px;
-  padding-right: 18px;
-}
-.justify-center{
-  justify-content: center;
-}
-.flex{
-  display: flex;
-}
-.align-center{
-  align-items: center;
-}
-.row{
-  flex-direction: row;
-}
-.column{
-  flex-direction: column;
-}
-.wrap{
-  flex-wrap: wrap;
-}
-.space-between{
-  justify-content: space-between;
-}
-
-.container{
-	width: 100%;
-	max-width: 1240px;
-	padding: 0 18px;
-	margin: 0 auto;
-}
-
-.flex-layout{
-  height: 100%;
-  min-height: 100vh;
-}
-
 </style>
