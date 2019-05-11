@@ -7,7 +7,7 @@
         <nuxt class="app-content" />
         <img
           class="selfie"
-          src="~/assets/img/me_crop.png"
+          src="~/assets/img/me_crop_half.png"
         >
       </div>
     </div>
