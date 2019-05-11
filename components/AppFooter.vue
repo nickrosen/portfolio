@@ -39,11 +39,11 @@
           </svg>
         </a>
       </div>
-      <!-- <ui-link-round
+      <ui-link-round
         class="mobile-menu"
         title="Menu"
         link="/link"
-      ></ui-link-round> -->
+      ></ui-link-round>
     </footer>
   </section>
 </template>
@@ -64,6 +64,7 @@ export default {
 <style scoped>
 .mobile-menu {
   margin: 20px 0;
+  display: none;
 }
 .footer-section {
   /* background-color: hsl(210, 31%, 80%); */
@@ -168,7 +169,10 @@ input:checked + .slider:before {
     display: none;
   }
   .footer-container {
-    justify-content: center;
+    justify-content: flex-end;
+  }
+  .mobile-menu {
+    display: inline-block;
   }
 }
 

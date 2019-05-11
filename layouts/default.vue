@@ -25,7 +25,7 @@ export default {
 <style>
 .selfie {
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   width: 90vmin;
   height: auto;
@@ -43,9 +43,33 @@ export default {
   max-width: 1500px;
   margin: 0 auto;
   padding: 0 20px;
-  min-height: calc(100vh - 80px);
+  height: calc(100vh - 80px);
   display: grid;
   grid-template-columns: 240px 1fr;
   position: relative;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .app-nav {
+    display: none;
+  }
+  .content-wrapper {
+    height: calc(100vh - 116px);
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }
 </style>
