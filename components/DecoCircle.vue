@@ -17,6 +17,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      windowHeight: null
+    };
+  },
   props: {
     color: {
       type: String,
@@ -30,9 +35,19 @@ export default {
       type: String,
       default: "100px"
     }
+  },
+  methods: {
+    getWindowHeight(event) {
+      // this.windowHeight = document.documentElement.clientHeight;
+      this.windowHeight = document.documentElement.clientHeight;
+    }
+  },
+  mounted: function() {
+    window.addEventListener("resize", this.getWindowHeight);
+    this.getWindowHeight();
   }
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 </style>

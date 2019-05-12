@@ -1,28 +1,13 @@
 <template>
-  <!-- <section class="welcome-section"> -->
   <section>
-    <!-- <deco-circle
-        class="circle-top-right"
-        color="hsl(204, 100%, 86%)"
-        height="240px"
-        width="240px"
-      /> -->
-
-    <!-- <div class="intro-section"> -->
     <h1>
-      <span class="hi">Hi, </span>
-      <span class="intro">I'm Nick Rosen </span>
-      <span class="dnb">I design and build </span>
-      <span class="web-apps">web apps </span>
-      <span class="site-welcome">Welcome to my site</span>
+      <span>Hi, I'm Nick </span>
+      <span>I design <span class="spand">&</span> build </span>
+      <span>web apps </span>
     </h1>
-    <!-- </div> -->
-
-    <!-- <img
-      class="me-head"
-      src="~/assets/img/me_crop.png"
-    > -->
-
+    <img src="~/assets/img/me_round.png">
+    <div class="circle-120"></div>
+    <div class="circle-144"></div>
   </section>
 </template>
 
@@ -52,86 +37,75 @@ export default {
 </script>
 
 <style scoped>
-.intro-section {
-  border: 1px solid;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
+.spand {
+  color: hsl(210, 16%, 82%);
 }
-/* to do - clean up styles */
-/* .site-welcome {
-  font-size: 47px;
-}
-.web-apps {
-  font-size: 99px;
-  line-height: 1.1;
-  margin-bottom: 12px;
-}
-.dnb {
-  font-size: 52px;
-}
-.hi {
-  font-size: 99px;
-  display: block;
-  line-height: 1.1;
-  margin-bottom: 12px;
-}
-.intro {
-  font-size: 62px;
-} */
-.circle-top-right {
+.circle-120 {
+  height: 70vmax;
+  width: 70vmax;
+  border: 1px solid hsl(180, 77%, 47%);
+  grid-column: 2;
+  align-self: center;
+  justify-self: center;
   position: absolute;
-  top: -100px;
-  right: -100px;
+  border-radius: 50%;
 }
-/* h1#welcome > span {
-  display: block;
-} */
-#welcome {
+.circle-144 {
+  height: 110vmax;
+  width: 110vmax;
+  border: 1px solid hsl(180, 77%, 47%);
+  grid-column: 2;
+  align-self: center;
+  justify-self: center;
+  position: absolute;
+  border-radius: 50%;
+}
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* grid-template-rows: 1fr 1fr; */
+  position: relative;
+  overflow: hidden;
+}
+h1 {
+  grid-column: 1;
+  /* grid-row: 2; */
+  font-size: 42px;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
   font-family: "Playfair Display", serif;
   display: inline-block;
-  width: 100%;
-  max-width: 440px;
+  /* background-color: hsl(204, 100%, 86%); */
+  /* margin: 0; */
+  padding: 20px;
+  z-index: 2;
 }
-.title-circle {
-  background-color: hsl(208, 88%, 62%);
-  width: 100%;
-  padding-top: 100%; /* 1:1 Aspect Ratio */
-  position: relative; /* If you want text inside of it */
-  border-radius: 50%;
-  box-shadow: inset 0 4px 6px hsla(0, 0%, 0%, 0.1);
+h1 > span {
+  display: block;
 }
-.title-circle > div {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-}
-.home-nav {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /* align-items: flex-end; */
-  margin-bottom: 40px;
-}
-/* .home-nav > div {
-  display: inline-block;
-} */
 
-.welcome-section {
-  min-height: calc(100vh - 80px);
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+img {
+  grid-column: 2;
+  /* grid-row: 1; */
+  align-self: center;
+  justify-self: center;
+  width: auto;
+  /* max-width: 360px; */
+  height: 66vh;
+  position: relative;
+  /* background-color: hsl(172, 97%, 88%); */
+  border-radius: 50%;
+  border: 1px solid hsl(180, 77%, 47%);
 }
-.welcome-section > div {
-  width: 100%;
-}
-@media only screen and (min-width: 769px) {
+
+@media only screen and (max-width: 769px) {
+  img {
+    grid-column: 1/3;
+  }
+  h1 {
+    grid-column: 1/3;
+  }
 }
 .img-col {
   align-self: flex-end;

@@ -68,7 +68,7 @@ a {
   transition: all 0.3s ease;
 }
 .cta.nuxt-link-exact-active.nuxt-link-active:before {
-  background: hsl(214, 15%, 91%);
+  background: hsl(16, 94%, 61%);
 }
 .cta span {
   position: relative;

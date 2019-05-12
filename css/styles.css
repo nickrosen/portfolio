@@ -23,6 +23,7 @@ html {
     font-family: "Fira Sans", sans-serif;
     -webkit-text-size-adjust: 100%;
     scroll-behavior: smooth;
+    background-color: red;
 }
 body {
     margin: 0;

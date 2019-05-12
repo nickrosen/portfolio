@@ -46,9 +46,9 @@ export default {
 <style scoped>
 .nav-link {
   margin-top: 40px;
+  padding: 0 20px;
 }
 header {
-  width: 350px;
-  padding-right: 20px;
+  z-index: 2;
 }
 </style>
