@@ -64,6 +64,9 @@ export default {
   .nuxt-content {
     grid-column: span 2;
   }
+  .flex-layout {
+    padding: 5px 5px 0;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */

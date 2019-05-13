@@ -1,13 +1,50 @@
 <template>
   <section>
     <h1>
-      <span>Hi, I'm Nick </span>
+      <!-- <span>Hi, I'm Nick </span>
       <span>I design <span class="spand">&</span> build </span>
-      <span>web apps </span>
+      <span>web apps </span> -->
+
+      <svg
+        width="100%"
+        height="auto"
+        viewBox="0 0 251 76"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <g
+          id="Page-1"
+          stroke="none"
+          stroke-width="1"
+          fill="none"
+          fill-rule="evenodd"
+          font-family="PlayfairDisplay-Black, Playfair Display Black"
+          font-size="33"
+          font-weight="700"
+        >
+          <text
+            id="Hi,-I’m-Nick-I-build"
+            fill="hsl(218, 100%, 17%)"
+          >
+            <tspan
+              x="33.1545"
+              y="26"
+            >Hi, I’m Nick</tspan>
+            <tspan
+              x="0.105"
+              y="70"
+            >I build web apps</tspan>
+          </text>
+        </g>
+      </svg>
     </h1>
-    <img src="~/assets/img/me_round.png">
-    <div class="circle-120"></div>
-    <div class="circle-144"></div>
+    <div class="img-frame">
+      <img src="~/assets/img/me_round.png">
+    </div>
+
+    <!-- <div class="circle-120"></div>
+    <div class="circle-144"></div> -->
   </section>
 </template>
 
@@ -37,6 +74,9 @@ export default {
 </script>
 
 <style scoped>
+svg {
+  width: 100%;
+}
 .spand {
   color: hsl(210, 16%, 82%);
 }
@@ -80,6 +120,10 @@ h1 {
   /* margin: 0; */
   padding: 20px;
   z-index: 2;
+  /* text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+  text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+  text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15); */
+  color: hsl(218, 100%, 17%);
 }
 h1 > span {
   display: block;
@@ -95,11 +139,43 @@ img {
   height: 66vh;
   position: relative;
   /* background-color: hsl(172, 97%, 88%); */
+  /* border-radius: 50%;
+  border: 1px solid hsl(180, 77%, 47%); */
+}
+.img-frame > img {
+  border-radius: 50%;
+}
+.img-frame {
+  grid-column: 2;
+  /* grid-row: 1; */
+  align-self: center;
+  justify-self: center;
+  width: auto;
+  /* max-width: 360px; */
+  height: 66vh;
+  position: relative;
+  /* background-color: hsl(172, 97%, 88%); */
   border-radius: 50%;
   border: 1px solid hsl(180, 77%, 47%);
+  /* overflow: hidden; */
+}
+.img-frame::after {
+  content: "";
+  height: 70vmax;
+  width: 70vmax;
+  border: 1px solid hsl(180, 77%, 47%);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: -20vmax;
+  margin: auto;
+  z-index: 9;
+  border-radius: 50%;
+  justify-self: center;
 }
 
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 1000px) {
   img {
     grid-column: 1/3;
   }
