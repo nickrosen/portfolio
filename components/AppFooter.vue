@@ -39,29 +39,49 @@
           </svg>
         </a>
       </div>
-      <ui-link-round
-        class="mobile-menu"
-        title="Menu"
-        link="/link"
-      ></ui-link-round>
+      <button @click="toggleFullscrenMenu">menu</button>
     </footer>
+    <app-nav-bar
+      class="mobile-nav"
+      v-if="fullScreenNav"
+    />
   </section>
 </template>
 
 <script>
-import UiLinkRound from "~/components/UiLinkRound.vue";
-
+import UiButtonRound from "~/components/UiButtonRound.vue";
+import AppNavBar from "~/components/AppNavBar.vue";
 export default {
-  components: { UiLinkRound },
+  components: { UiButtonRound, AppNavBar },
   data() {
     return {
-      lightSwitch: false
+      lightSwitch: false,
+      fullScreenNav: false
     };
+  },
+  methods: {
+    toggleFullscrenMenu() {
+      this.fullScreenNav = !this.fullScreenNav;
+    },
+    toggleDarkLightMode() {
+      console.log(222);
+    }
   }
 };
 </script>
 
 <style scoped>
+.mobile-nav {
+  display: flex;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  left: 0;
+  background: aliceblue;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
 .mobile-menu {
   margin: 20px 0;
   display: none;

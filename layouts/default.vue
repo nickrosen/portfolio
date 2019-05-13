@@ -22,8 +22,8 @@ export default {
   components: { AppNavBar, AppFooter },
   methods: {
     getWindowHeight(event) {
+      this.windowHeight = window.innerHeight;
       // this.windowHeight = document.documentElement.clientHeight;
-      this.windowHeight = document.documentElement.clientHeight;
     }
   },
   mounted: function() {
