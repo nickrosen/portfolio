@@ -39,9 +39,7 @@
         </g>
       </svg>
     </h1>
-    <div class="img-frame">
-      <img src="~/assets/img/me_round.png">
-    </div>
+    <img src="~/assets/img/me_round.png">
 
     <!-- <div class="circle-120"></div>
     <div class="circle-144"></div> -->
@@ -109,21 +107,14 @@ section {
 }
 h1 {
   grid-column: 1;
-  /* grid-row: 2; */
-  font-size: 42px;
   justify-self: center;
   align-self: center;
   text-align: center;
-  font-family: "Playfair Display", serif;
-  display: inline-block;
-  /* background-color: hsl(204, 100%, 86%); */
-  /* margin: 0; */
-  padding: 20px;
   z-index: 2;
+  margin: 10px 20px;
   /* text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
   text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
   text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15); */
-  color: hsl(218, 100%, 17%);
 }
 h1 > span {
   display: block;
@@ -142,42 +133,26 @@ img {
   /* border-radius: 50%;
   border: 1px solid hsl(180, 77%, 47%); */
 }
-.img-frame > img {
-  border-radius: 50%;
-}
-.img-frame {
-  grid-column: 2;
-  /* grid-row: 1; */
-  align-self: center;
-  justify-self: center;
-  width: auto;
-  /* max-width: 360px; */
-  height: 66vh;
-  position: relative;
-  /* background-color: hsl(172, 97%, 88%); */
-  border-radius: 50%;
-  border: 1px solid hsl(180, 77%, 47%);
-  /* overflow: hidden; */
-}
-.img-frame::after {
+/* .img-frame::after {
   content: "";
   height: 70vmax;
   width: 70vmax;
   border: 1px solid hsl(180, 77%, 47%);
   position: absolute;
   top: 0;
-  right: 0;
   bottom: 0;
-  left: -20vmax;
-  margin: auto;
+  left: 0;
+  margin: auto 0;
   z-index: 9;
   border-radius: 50%;
   justify-self: center;
-}
+  clip-path: ellipse(130px 140px at 10% 20%);
+} */
 
 @media only screen and (max-width: 1000px) {
   img {
     grid-column: 1/3;
+    height: 40vmin;
   }
   h1 {
     grid-column: 1/3;
