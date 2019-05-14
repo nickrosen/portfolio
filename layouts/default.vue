@@ -2,7 +2,7 @@
   <div class="flex-layout">
     <div
       class="main-content"
-      :style="{'height': `calc(${windowHeight}px - ${footerHeight}px)`}"
+      :style="{'height': `calc(${windowHeight}px - ${footerHeight}px - ${mainOffset}px)`}"
     >
       <app-nav-bar class="app-nav" />
       <nuxt class="nuxt-content" />
@@ -17,7 +17,8 @@ export default {
   data() {
     return {
       windowHeight: null,
-      footerHeight: null
+      footerHeight: null,
+      mainOffset: null
     };
   },
   components: { AppNavBar, AppFooter },
@@ -27,6 +28,10 @@ export default {
       this.footerHeight = document.getElementsByClassName(
         "footer-section"
       )[0].offsetHeight;
+      this.mainOffset = document.getElementsByClassName(
+        "main-content"
+      )[0].offsetTop;
+      // console.log();
       // this.windowHeight = document.documentElement.clientHeight;
     }
   },
