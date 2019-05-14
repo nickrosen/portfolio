@@ -39,13 +39,42 @@
           </svg>
         </a>
       </div>
-      <button @click="toggleFullscrenMenu">menu</button>
+      <button
+        class="button open-menu"
+        @click="toggleFullscrenMenu"
+      >
+        Menu
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          class="icon-menu"
+        >
+          <path
+            class="secondary"
+            fill-rule="evenodd"
+            d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+          /></svg>
+      </button>
     </footer>
     <div
       class="mobile-nav"
       v-if="fullScreenNav"
     >
-      <button @click="toggleFullscrenMenu">Close</button>
+      <button
+        class="button close-menu"
+        @click="toggleFullscrenMenu"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          class="icon-close"
+        >
+          <path
+            class="secondary"
+            fill-rule="evenodd"
+            d="M15.78 14.36a1 1 0 0 1-1.42 1.42l-2.82-2.83-2.83 2.83a1 1 0 1 1-1.42-1.42l2.83-2.82L7.3 8.7a1 1 0 0 1 1.42-1.42l2.83 2.83 2.82-2.83a1 1 0 0 1 1.42 1.42l-2.83 2.83 2.83 2.82z"
+          /></svg>
+      </button>
       <app-nav-bar />
     </div>
   </section>
@@ -74,8 +103,46 @@ export default {
 </script>
 
 <style scoped>
-.mobile-nav {
+.icon-menu {
+  margin-left: 16px;
+  height: 20px;
+  width: 20px;
+}
+.icon-close {
+  height: 30px;
+  width: 30px;
+}
+.button.open-menu {
+  display: none;
+}
+.button.close-menu {
+  position: absolute;
+  right: 20px;
+  padding: 0;
+  height: 56px;
+  width: 56px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  background-color: hsl(228, 45%, 45%);
+  border: 1px solid hsl(228, 45%, 45%);
+  color: hsl(221, 68%, 93%);
+  box-shadow: 0 3px 5px hsla(0, 0%, 0%, 0.2);
+  font-size: 18px;
+  padding: 16px 32px;
+  border-radius: 50px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+}
+.mobile-nav {
+  /* display: flex; */
   position: fixed;
   top: 0;
   z-index: 999;
@@ -83,7 +150,8 @@ export default {
   background: aliceblue;
   width: 100%;
   height: 100%;
-  flex-direction: column;
+  /* flex-direction: column;
+  justify-content: center; */
 }
 .mobile-menu {
   margin: 20px 0;
@@ -196,6 +264,10 @@ input:checked + .slider:before {
   }
   .mobile-menu {
     display: inline-block;
+  }
+  .button.open-menu {
+    display: flex;
+    margin: 20px auto;
   }
 }
 

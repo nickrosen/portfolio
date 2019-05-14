@@ -63,6 +63,7 @@ export default {
   display: grid;
   grid-template-columns: 260px auto;
   position: relative;
+  border-radius: 12px;
 }
 
 /* Extra small devices (phones, 600px and down) */
