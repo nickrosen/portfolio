@@ -41,10 +41,13 @@
       </div>
       <button @click="toggleFullscrenMenu">menu</button>
     </footer>
-    <app-nav-bar
+    <div
       class="mobile-nav"
       v-if="fullScreenNav"
-    />
+    >
+      <button @click="toggleFullscrenMenu">Close</button>
+      <app-nav-bar />
+    </div>
   </section>
 </template>
 

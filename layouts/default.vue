@@ -2,7 +2,7 @@
   <div class="flex-layout">
     <div
       class="main-content"
-      :style="{'height': `calc(${windowHeight}px - 80px)`}"
+      :style="{'height': `calc(${windowHeight}px - ${footerHeight}px)`}"
     >
       <app-nav-bar class="app-nav" />
       <nuxt class="nuxt-content" />
@@ -16,13 +16,17 @@ import AppNavBar from "~/components/AppNavBar.vue";
 export default {
   data() {
     return {
-      windowHeight: null
+      windowHeight: null,
+      footerHeight: null
     };
   },
   components: { AppNavBar, AppFooter },
   methods: {
     getWindowHeight(event) {
       this.windowHeight = window.innerHeight;
+      this.footerHeight = document.getElementsByClassName(
+        "footer-section"
+      )[0].offsetHeight;
       // this.windowHeight = document.documentElement.clientHeight;
     }
   },
