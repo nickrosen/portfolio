@@ -116,8 +116,6 @@ export default {
   display: none;
 }
 .button.close-menu {
-  position: absolute;
-  right: 20px;
   padding: 0;
   height: 56px;
   width: 56px;
@@ -150,8 +148,9 @@ export default {
   background: aliceblue;
   width: 100%;
   height: 100%;
-  /* flex-direction: column;
-  justify-content: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .mobile-menu {
   margin: 20px 0;

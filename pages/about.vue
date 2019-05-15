@@ -1,34 +1,15 @@
 <template>
-  <section class="about-section">
-    <div>
-      <p><span class="page-title">My name is Nick Rosen, </span>I'm a web designer and developer based in San Diego, California. I work at Renovation Realty automating processes, building web apps and, managing digital advertising.</p>
-      <p>After trying, and not enjoying, a couple different career paths, I got into web development in 2011 and am so grateful to have found a job I love to do every day.</p>
-      <h3>I have worked on a wide range of projects over the years including:</h3>
-      <ul>
-        <li>Wordpress sites and plugins</li>
-        <li>Custom web and email frameworks</li>
-        <li>Web ads and landing pages</li>
-        <li>eCommerce sites and tools</li>
-        <li>Full Stack and Serverless web apps</li>
-        <li>CRM Customization & Automation</li>
-      </ul>
-      <h3>Using some of these technologies:</h3>
-      <ul>
-        <li>Adobe CC, Sketch, Affinity Design Suite for prototyping and design.</li>
-        <li>HTML, CSS, SCSS, Stylus, jQuery, JavaScript, AngularJS, Angular, React and Vue JS for client side code.</li>
-        <li>PHP, Node.js, Java, Python for server side code.</li>
-        <li>Gulp and Webpack to manage build processes.</li>
-        <li>MySQL, SQLite, PostgreSQL, MongoDB, and Firebase for databases.</li>
-        <li>Git and SVN for version control</li>
-      </ul>
-    </div>
-    <p class="fw">I’m looking to work on projects using modern technologies to solve interesting problems.</p>
-    <div class="text-wrapper">
+  <section class="about-page">
+    <img src="~/assets/img/me_round.png">
+    <div class="about-work">
+      <h2>My name's Nick Rosen</h2>
+      <p></p>
+      <p>I'm a web developer and designer based in San Diego, California. I work at Renovation Realty automating processes, building web apps and, managing digital advertising.</p>
+      <p>I got into web development in 2011 and am so grateful to have found a job I love to do every day. My favorite thing about being a web dev is the constant opportunity to learn new skills to solve problems.</p>
       <p>I live in Sherman Heights with my wife/bestie Kat and our black lab Cole. In my free time, I like to read, take classes online, and sail boats.</p>
-      <p>My favorite thing about being a web developer is learning new skills to solve problems.
-
-      </p>
     </div>
+    <!-- 
+     -->
   </section>
 </template>
 
@@ -52,6 +33,31 @@ export default {
 </script>
 
 <style scoped>
+.about-page {
+  padding-top: 40px;
+  overflow-y: scroll;
+  display: grid;
+  grid-gap: 20px;
+}
+p {
+  max-width: 600px;
+}
+.about-work {
+  grid-column: 2;
+  grid-row: 1;
+}
+img {
+  grid-column: 1;
+  grid-row: 1;
+  width: calc(100% - 40px);
+  height: auto;
+  position: relative;
+  border-radius: 50%;
+  border: 1px solid hsl(180, 77%, 47%);
+  margin: 20px;
+  box-shadow: 0 8px 12px hsla(0, 0%, 0%, 0.1);
+  max-width: 400px;
+}
 @media only screen and (min-width: 700px) {
 }
 </style>

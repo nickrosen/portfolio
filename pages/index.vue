@@ -5,41 +5,7 @@
       <span>I design <span class="spand">&</span> build </span>
       <span>web apps </span> -->
 
-      <svg
-        width="100%"
-        height="auto"
-        viewBox="0 0 251 76"
-        version="1.1"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-      >
-        <g
-          id="Page-1"
-          stroke="none"
-          stroke-width="1"
-          fill="none"
-          fill-rule="evenodd"
-          font-family="PlayfairDisplay-Black, Playfair Display Black"
-          font-size="33"
-          font-weight="700"
-        >
-          <text
-            id="Hi,-I’m-Nick-I-build"
-            fill="hsl(218, 100%, 17%)"
-          >
-            <tspan
-              x="33.1545"
-              y="26"
-            >Hi, I’m Nick</tspan>
-            <tspan
-              x="0.105"
-              y="70"
-            >I build web apps</tspan>
-          </text>
-        </g>
-      </svg>
     </h1>
-    <img src="~/assets/img/me_round.png">
 
     <!-- <div class="circle-120"></div>
     <div class="circle-144"></div> -->
