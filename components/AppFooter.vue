@@ -75,7 +75,7 @@
             d="M15.78 14.36a1 1 0 0 1-1.42 1.42l-2.82-2.83-2.83 2.83a1 1 0 1 1-1.42-1.42l2.83-2.82L7.3 8.7a1 1 0 0 1 1.42-1.42l2.83 2.83 2.82-2.83a1 1 0 0 1 1.42 1.42l-2.83 2.83 2.83 2.82z"
           /></svg>
       </button>
-      <app-nav-bar />
+      <app-nav-bar class="nav-list" />
     </div>
   </section>
 </template>
@@ -103,6 +103,9 @@ export default {
 </script>
 
 <style scoped>
+.nav-list {
+  margin: 20px 0;
+}
 .icon-menu {
   margin-left: 16px;
   height: 20px;
@@ -122,6 +125,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 20px;
+  align-self: flex-end;
 }
 
 .button {
