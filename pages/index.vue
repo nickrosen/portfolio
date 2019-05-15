@@ -1,21 +1,24 @@
 <template>
-  <section>
-    <h1>
-      <!-- <span>Hi, I'm Nick </span>
-      <span>I design <span class="spand">&</span> build </span>
-      <span>web apps </span> -->
-
-    </h1>
-
-    <!-- <div class="circle-120"></div>
-    <div class="circle-144"></div> -->
+  <section class="container rel">
+    <div
+      id="orb"
+      class="my-auto"
+    ></div>
+    <div id="waves"></div>
+    <div class="flex align-center">
+      <h1
+        id="job-title"
+        class="blue-1"
+      >
+        <span class="name">Nick Rosen</span>
+        <span class="job">Web Dev</span>
+      </h1>
+    </div>
   </section>
 </template>
 
 <script>
-import DecoCircle from "~/components/DecoCircle.vue";
 export default {
-  components: { DecoCircle },
   data() {
     return {
       title: "Nick Rosen | Portfolio"
@@ -38,129 +41,7 @@ export default {
 </script>
 
 <style scoped>
-svg {
-  width: 100%;
-}
-.spand {
-  color: hsl(210, 16%, 82%);
-}
-.circle-120 {
-  height: 70vmax;
-  width: 70vmax;
-  border: 1px solid hsl(180, 77%, 47%);
-  grid-column: 2;
-  align-self: center;
-  justify-self: center;
-  position: absolute;
-  border-radius: 50%;
-}
-.circle-144 {
-  height: 110vmax;
-  width: 110vmax;
-  border: 1px solid hsl(180, 77%, 47%);
-  grid-column: 2;
-  align-self: center;
-  justify-self: center;
-  position: absolute;
-  border-radius: 50%;
-}
-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* grid-template-rows: 1fr 1fr; */
-  position: relative;
-  overflow: hidden;
-}
-h1 {
-  grid-column: 1;
-  justify-self: center;
-  align-self: center;
-  text-align: center;
-  z-index: 2;
-  margin: 10px 20px;
-  /* text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
-  text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
-  text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15); */
-}
-h1 > span {
-  display: block;
-}
-
-img {
-  grid-column: 2;
-  /* grid-row: 1; */
-  align-self: center;
-  justify-self: center;
-  width: calc(100% - 40px);
-  height: auto;
-  position: relative;
-  border-radius: 50%;
-  border: 1px solid hsl(180, 77%, 47%);
-  margin: 20px;
-  box-shadow: 0 8px 12px hsla(0, 0%, 0%, 0.1);
-  max-width: 400px;
-}
-/* .img-frame::after {
-  content: "";
-  height: 70vmax;
-  width: 70vmax;
-  border: 1px solid hsl(180, 77%, 47%);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto 0;
-  z-index: 9;
-  border-radius: 50%;
-  justify-self: center;
-  clip-path: ellipse(130px 140px at 10% 20%);
-} */
-
-@media only screen and (max-width: 1000px) {
-  img {
-    /* grid-row: 1; */
-    grid-column: 1/3;
-    align-self: start;
-  }
-  h1 {
-    /* grid-row: 2; */
-    grid-column: 1/3;
-  }
-}
-.img-col {
-  align-self: flex-end;
-  position: relative;
-  /* overflow: hidden; */
-}
-.txt-col {
-  align-self: center;
-}
-.frame {
-  /* background-color: var(--teal-9); */
-  background-color: #ffffff;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 200 200'%3E%3Cpolygon fill='%23DCEFFA' points='100 0 0 100 100 100 100 200 200 100 200 0'/%3E%3C/svg%3E");
-  border-radius: 40px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  overflow: hidden;
-  /* padding-bottom: 10px; */
-}
-.me-head {
-  width: 100%;
-  position: relative;
-  top: 9px;
-  height: auto;
-  grid-column: 1 / 3;
-  /* -webkit-filter: contrast(200%); 
-  filter: contrast(200%); */
-  /* -webkit-filter: grayscale(100%); 
-  filter: grayscale(100%);
-  opacity: 1; */
-}
-
-/* h1#job-title > span.name {
+h1#job-title > span.name {
   display: block;
   animation-name: moveInLeft;
   animation-duration: 0.8s;
@@ -169,7 +50,7 @@ h1#job-title > span.job {
   display: block;
   animation-name: moveInRight;
   animation-duration: 0.8s;
-} */
+}
 
 @keyframes moveInBottom {
   0% {
@@ -201,6 +82,17 @@ h1#job-title > span.job {
     transform: translate(0);
   }
 }
+#waves {
+  position: absolute;
+  width: 100%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 50%;
+  margin-top: 30vmin;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%232186EB' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
 #orb {
   height: 60vmin;
   width: 60vmin;
@@ -214,5 +106,37 @@ h1#job-title > span.job {
   border-radius: 50%;
   animation-name: moveInBottom;
   animation-duration: 1s;
+}
+#job-title {
+  font-size: 15vmin;
+  display: inline-block;
+}
+.mb-diff {
+  mix-blend-mode: difference;
+}
+.panel {
+  position: absolute;
+  height: 50vmin;
+  width: 50vmin;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border-radius: 50%;
+  right: 16px;
+  z-index: -1;
+  background-color: hsl(210, 24%, 16%);
+}
+.huge {
+  font-size: 12vw;
+  line-height: 90%;
+  position: relative;
+  left: -0.5vw;
+  margin-bottom: 3vw;
+}
+p {
+  mix-blend-mode: exclusion;
+  font-size: 4.9vw;
+  margin: 0;
+  color: hsl(210, 24%, 16%);
 }
 </style>

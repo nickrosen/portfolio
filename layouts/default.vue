@@ -1,92 +1,95 @@
 <template>
-  <div class="flex-layout">
-    <div
-      class="main-content"
-      :style="{'height': `calc(${windowHeight}px - ${footerHeight}px - ${mainOffset}px)`}"
-    >
-      <app-nav-bar class="app-nav" />
-      <nuxt class="nuxt-content" />
-    </div>
-    <app-footer />
+  <div class="flex-layout flex column space-between blue-bg-11">
+    <app-header class="mb-24" />
+    <nuxt />
+    <app-footer class="mt-48" />
   </div>
 </template>
 <script>
-import AppFooter from "~/components/AppFooter.vue";
-import AppNavBar from "~/components/AppNavBar.vue";
-export default {
-  data() {
-    return {
-      windowHeight: null,
-      footerHeight: null,
-      mainOffset: null
-    };
-  },
-  components: { AppNavBar, AppFooter },
-  methods: {
-    getWindowHeight(event) {
-      this.windowHeight = window.innerHeight;
-      this.footerHeight = document.getElementsByClassName(
-        "footer-section"
-      )[0].offsetHeight;
-      this.mainOffset = document.getElementsByClassName(
-        "main-content"
-      )[0].offsetTop;
-      // console.log();
-      // this.windowHeight = document.documentElement.clientHeight;
-    }
-  },
-  mounted: function() {
-    window.addEventListener("resize", this.getWindowHeight);
-    this.getWindowHeight();
+  import AppHeader from '~/components/AppHeader.vue'
+  import AppFooter from '~/components/AppFooter.vue'
+  export default {
+    components: { AppHeader, AppFooter }
   }
-};
 </script>
 
-<style>
-.selfie {
+<style> 
+.justify-end{
+  justify-content: flex-end;
+}
+
+.mt-48 {
+  margin-top: 48px;
+}
+.f-border {
+  border-top: 1px solid var(--blue-10);
+}
+.my-60{
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+.mb-48{
+  margin-bottom: 48px;
+}
+
+.my-auto{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+#initials{
+  font-size: 60vh;
+  font-family: 'PT Serif', serif;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.3);
+  /* color: rgba(0, 0, 0, 0.1); */
   position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 90vmin;
-  height: auto;
+  top: 0;
+  left: -2vh;
+  z-index: 0;
 }
-.flex-layout {
-  background: hsl(216, 98%, 25%);
-  padding: 20px 20px 0;
-}
-.main-content {
-  background: hsl(216, 33%, 97%);
-  box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.1);
-  width: 100%;
-  max-width: 1500px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 260px auto;
+.rel{
   position: relative;
 }
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 767px) {
-  .app-nav {
-    display: none;
-  }
-  .nuxt-content {
-    grid-column: span 2;
-  }
-  .flex-layout {
-    padding: 5px 5px 0;
-  }
+.py-18{
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+.px-18 {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+.justify-center{
+  justify-content: center;
+}
+.flex{
+  display: flex;
+}
+.align-center{
+  align-items: center;
+}
+.row{
+  flex-direction: row;
+}
+.column{
+  flex-direction: column;
+}
+.wrap{
+  flex-wrap: wrap;
+}
+.space-between{
+  justify-content: space-between;
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+.container{
+	width: 100%;
+	max-width: 1240px;
+	padding: 0 18px;
+	margin: 0 auto;
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
+.flex-layout{
+  height: 100%;
+  min-height: 100vh;
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-}
 </style>
