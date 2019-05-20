@@ -1,132 +1,84 @@
 <template>
-  <div class="layout">
-    <div class="header">
-      <!-- This link is an n-link because it links to another Nuxt route -->
-      <n-link class="logo" to="/"><logo/></n-link>
-    </div>
-    <nuxt class="content" />
-    <div class="footer">
-      <p>
-        <!-- This link is not an n-link because it is external -->
-        <a target="_blank"
-            rel="noopener noreferrer"
-            href="https://github.com/tylermercer/nuxt-netlifycms-boilerplate">
-          View this project on Github
-        </a>
-      </p>
-      <p>
-        <!-- This is not an n-link because the NetlifyCMS admin page is static.
-        If you make it an n-link, you'll get a "Page could not be found" when
-        you click it. -->
-        <a href="/admin">
-          NetlifyCMS Admin Login
-       </a>
-     </p>
+  <div>
+    <div class="gbg"></div>
+    <div class="layout">
+      <app-nav class="nav" />
+      <nuxt class="content" />
     </div>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import AppNav from "~/components/AppNav.vue";
 
 export default {
   components: {
-    Logo,
+    AppNav
   }
-}
+};
 </script>
 
 <style>
-.layout {
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 100vh;
-  padding: 40px 20px 10px 20px;
-}
-
-.header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
+.nav {
+  z-index: 1;
+  grid-column: 2;
+  grid-row: 1;
 }
 .content {
-  margin-top: 40px;
-  margin-bottom: 40px;
+  z-index: 1;
+  grid-column: 1 / -1;
+  grid-row: 2;
 }
-
-.footer {
-  background-color: whitesmoke;
+.layout {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto 1fr auto;
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  max-width: 1240px;
+  margin: 0 auto;
+  height: 100vh;
+  padding: 0 20px;
 }
-.footer > * {
-  padding: 20px;
+.gbg {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: hsl(212, 92%, 43%);
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+  height: 100vh;
+  width: 100%;
 }
 
-.logo {
-  display: block;
-  margin: 0;
-  padding: 0;
+@media only screen and (max-width: 1042px) {
+  .nav {
+    grid-column: span 2;
+  }
+  .gbg {
+    height: 80vh;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: auto;
+  /*   outline: 1px solid red; */
 }
 
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
+  font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
+body {
   margin: 0;
-}
-
-a:link {
-  color: #41b883;
-}
-
-a:visited {
-  color: #3b8070;
-}
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+  font-family: "Fira Sans", sans-serif;
+  color: hsl(40, 13%, 23%);
+  background-color: hsl(40, 23%, 97%);
 }
 </style>

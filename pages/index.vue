@@ -1,51 +1,75 @@
-<template lang="html">
-  <div class="main">
-    <div class="main-header">
-      <h1>{{siteInfo.sitename}}</h1>
-      <p>{{siteInfo.sitedescription}}</p>
-    </div>
-    <div class="posts-list">
-      <h2 class="posts-list-title">Posts</h2>
-      <p class="post-link" v-for="post in blogPosts"><n-link :to="post._path">{{post.title}}</n-link></p>
-    </div>
-  </div>
+<template>
+  <section class="home-page">
+    <img
+      src="~/assets/img/me.png"
+      alt="me-face"
+    >
+    <h1>
+      <span>Hello, my name is </span>
+      <span class="name">Nick Rosen </span>
+      <span>I build websites and apps</span>
+    </h1>
+  </section>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
-export default {
-  components: {
-    Logo,
-  },
-  computed: {
-    blogPosts() {
-      return this.$store.state.blogPosts;
-    },
-    siteInfo() {
-      return this.$store.state.siteInfo;
-    }
-  }
-}
+export default {};
 </script>
 
-<style lang="css" scoped>
-.posts-list {
+<style scoped>
+.home-page {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+}
+img {
   width: 100%;
-  background-color: whitesmoke;
-  padding: 20px;
-  margin-top: 35px;
+  height: auto;
+  z-index: 9;
+  grid-column: span 1;
+  /* grid-row: 2 / span 1; */
+  grid-row: 1 / -1;
+  border: 4px solid hsl(40, 23%, 97%);
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: hsl(212, 92%, 43%);
+  z-index: 1;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
-.post-link {
-  padding-top: 10px;
+h1 {
+  grid-row: 2;
+  grid-column: 2;
+  /* grid-row: span 2; */
+  z-index: 1;
+  /* align-self: end; */
+  /*   justify-self: center; */
+  color: hsl(212, 92%, 43%);
+  font-weight: 500;
 }
-.main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+h1 > span {
+  display: block;
 }
-.main-header {
-  text-align: center;
+span.name {
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1.1;
+  position: relative;
+  left: -2px;
+}
+@media only screen and (max-width: 1042px) {
+  img {
+    grid-column: span 2;
+    grid-row: 1;
+    align-self: center;
+    justify-self: center;
+    max-width: 440px;
+  }
+
+  h1 {
+    grid-column: span 2;
+    grid-row: 2;
+    justify-self: center;
+  }
 }
 </style>
