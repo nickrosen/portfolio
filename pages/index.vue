@@ -72,4 +72,9 @@ span.name {
     justify-self: center;
   }
 }
+@media only screen and (max-width: 364px) {
+  span.name {
+    font-size: 48px;
+  }
+}
 </style>
