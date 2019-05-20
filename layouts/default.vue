@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
+@import url("https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700|Fira+Sans:400,500,700,700i,900&display=swap");
 .nav {
   z-index: 1;
   grid-column: 2;
