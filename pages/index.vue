@@ -74,7 +74,7 @@ span.name {
 }
 @media only screen and (max-width: 364px) {
   span.name {
-    font-size: 48px;
+    font-size: 40px;
   }
 }
 </style>
