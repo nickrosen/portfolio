@@ -34,6 +34,7 @@ export default {
 ul.nav-list {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   padding: 0;
   margin-top: 20px;
 }
