@@ -30,7 +30,7 @@ img {
   grid-column: span 1;
   grid-row: 1 / -1;
   border: 4px solid hsl(40, 23%, 97%);
-  border-radius: 12px;
+  border-radius: 10%;
   overflow: hidden;
   background-color: hsl(212, 92%, 43%);
   z-index: 1;
