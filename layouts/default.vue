@@ -83,7 +83,7 @@ export default {
     grid-column: span 2;
   }
   .gbg {
-    height: 80vh;
+    height: 66vh;
   }
 }
 

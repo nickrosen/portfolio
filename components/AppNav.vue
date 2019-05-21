@@ -42,7 +42,7 @@ ul.nav-list > li {
   list-style-type: none;
 }
 ul.nav-list > li:not(:last-child) {
-  margin-right: 20px;
+  margin-right: 30px;
 }
 ul.nav-list > li > a {
   text-decoration: none;
