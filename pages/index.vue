@@ -68,7 +68,7 @@ span.name {
     justify-self: center;
   }
 }
-@media only screen and (max-width: 364px) {
+@media only screen and (max-width: 600px) {
   span.name {
     font-size: 48px;
   }
