@@ -23,7 +23,8 @@ export default {
         { url: "/work", title: "Work" },
         { url: "/blog", title: "Blog" },
         { url: "/contact-me", title: "Contact Me" }
-      ]
+      ],
+      fullScreenNav: false
     };
   }
 };
@@ -33,12 +34,14 @@ export default {
 ul.nav-list {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   padding: 0;
   margin-top: 20px;
 }
 ul.nav-list > li {
   list-style-type: none;
+}
+ul.nav-list > li:not(:last-child) {
+  margin-right: 20px;
 }
 ul.nav-list > li > a {
   text-decoration: none;

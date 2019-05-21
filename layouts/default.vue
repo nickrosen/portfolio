@@ -1,7 +1,10 @@
 <template>
   <div>
     <div class="gbg"></div>
-    <div class="layout">
+    <div
+      class="layout"
+      :style="{'height': `${windowHeight}px`}"
+    >
       <app-nav class="nav" />
       <nuxt class="content" />
     </div>
@@ -14,6 +17,30 @@ import AppNav from "~/components/AppNav.vue";
 export default {
   components: {
     AppNav
+  },
+  data() {
+    return {
+      windowHeight: null
+      // footerHeight: null,
+      // mainOffset: null
+    };
+  },
+  methods: {
+    getWindowHeight(event) {
+      this.windowHeight = window.innerHeight;
+      // this.footerHeight = document.getElementsByClassName(
+      //   "footer-section"
+      // )[0].offsetHeight;
+      // this.mainOffset = document.getElementsByClassName(
+      //   "main-content"
+      // )[0].offsetTop;
+      // console.log();
+      // this.windowHeight = document.documentElement.clientHeight;
+    }
+  },
+  mounted: function() {
+    window.addEventListener("resize", this.getWindowHeight);
+    this.getWindowHeight();
   }
 };
 </script>
@@ -38,7 +65,6 @@ export default {
   width: 100%;
   max-width: 1240px;
   margin: 0 auto;
-  height: 100vh;
   padding: 0 20px;
 }
 .gbg {

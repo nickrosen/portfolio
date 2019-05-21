@@ -28,7 +28,6 @@ img {
   height: auto;
   z-index: 9;
   grid-column: span 1;
-  /* grid-row: 2 / span 1; */
   grid-row: 1 / -1;
   border: 4px solid hsl(40, 23%, 97%);
   border-radius: 12px;
@@ -40,10 +39,7 @@ img {
 h1 {
   grid-row: 2;
   grid-column: 2;
-  /* grid-row: span 2; */
   z-index: 1;
-  /* align-self: end; */
-  /*   justify-self: center; */
   color: hsl(212, 92%, 43%);
   font-weight: 500;
 }
@@ -74,7 +70,7 @@ span.name {
 }
 @media only screen and (max-width: 364px) {
   span.name {
-    font-size: 40px;
+    font-size: 48px;
   }
 }
 </style>
