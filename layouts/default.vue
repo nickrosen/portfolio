@@ -1,13 +1,10 @@
 <template>
-  <div>
-    <!-- <div class="gbg"></div> -->
-    <div
-      class="layout"
-      :style="{'height': `${windowHeight}px`}"
-    >
-      <app-nav class="nav" />
-      <nuxt class="content" />
-    </div>
+  <div
+    class="grid"
+    :style="`min-height:${windowHeight}px`"
+  >
+    <app-nav class="nav" />
+    <nuxt class="content" />
   </div>
 </template>
 
@@ -48,49 +45,22 @@ export default {
 
 <style>
 @import url("https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700|Fira+Sans:400,500,700,700i,900&display=swap");
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+}
 .nav {
-  z-index: 1;
   grid-column: 1 / -1;
   grid-row: 1;
   justify-self: center;
   padding-top: 20px;
 }
-/* .content {
-  z-index: 1;
+.content {
   grid-column: 1 / -1;
-  grid-row: 1;
-  height: 100%;
-  overflow-y: hidden;
-} */
-.layout {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto 1fr;
-  width: 100%;
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 0 20px;
+  grid-row: 2;
 }
-.gbg {
-  z-index: 0;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background-color: hsl(212, 92%, 43%);
-  clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
-  height: 120px;
-  width: 100%;
-}
-
-/* @media only screen and (max-width: 1042px) {
-  .nav {
-    grid-column: span 2;
-  }
-  .gbg {
-    height: 66vh;
-  }
-} */
 
 * {
   box-sizing: border-box;
@@ -113,8 +83,16 @@ body {
   background-color: hsl(40, 23%, 97%);
 }
 @media only screen and (max-width: 518px) {
-  .layout {
-    padding: 0 10px;
+  .grid {
+    grid-template-rows: 1fr auto;
+  }
+  .nav {
+    width: 100%;
+    padding: 20px 10px;
+    grid-row: 2;
+  }
+  .content {
+    grid-row: 1;
   }
 }
 </style>
