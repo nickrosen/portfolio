@@ -119,16 +119,24 @@ svg {
 }
 @media only screen and (max-width: 518px) {
   ul.nav-list {
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 0 10px;
   }
-  ul.nav-list > li > a[data-v-4f57e35d] {
+  ul.nav-list > li > a {
     color: hsl(211, 13%, 65%);
     font-size: 16px;
     padding: 14px 10px;
+  }
+}
+@media only screen and (max-width: 372px) {
+  ul.nav-list > li > a {
+    color: hsl(211, 13%, 65%);
+    font-size: 14px;
+    padding: 14px 8px;
   }
 }
 </style>

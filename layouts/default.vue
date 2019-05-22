@@ -112,4 +112,9 @@ body {
   color: hsl(40, 13%, 23%);
   background-color: hsl(40, 23%, 97%);
 }
+@media only screen and (max-width: 372px) {
+  .layout {
+    padding: 0 10px;
+  }
+}
 </style>
