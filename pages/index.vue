@@ -1,6 +1,6 @@
 <template>
   <section class="home-page">
-    <img
+    <!-- <img
       src="~/assets/img/me.png"
       alt="me-face"
     >
@@ -8,7 +8,7 @@
       <span>Hello, my name is </span>
       <span class="name">Nick Rosen </span>
       <span>I build websites and apps</span>
-    </h1>
+    </h1> -->
   </section>
 </template>
 
@@ -17,12 +17,12 @@ export default {};
 </script>
 
 <style scoped>
-.home-page {
+/* .home-page {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr auto;
-}
+} */
 img {
   width: 100%;
   height: auto;
@@ -37,11 +37,12 @@ img {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 h1 {
-  grid-row: 2;
+  grid-row: 1;
   grid-column: 2;
   z-index: 1;
-  color: hsl(212, 92%, 43%);
+  color: hsl(40, 23%, 97%);
   font-weight: 500;
+  margin-top: 60px;
 }
 h1 > span {
   display: block;

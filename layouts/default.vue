@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="gbg"></div>
+    <!-- <div class="gbg"></div> -->
     <div
       class="layout"
       :style="{'height': `${windowHeight}px`}"
@@ -20,17 +20,18 @@ export default {
   },
   data() {
     return {
-      windowHeight: null
-      // footerHeight: null,
+      windowHeight: null,
+      footerHeight: null
       // mainOffset: null
     };
   },
   methods: {
     getWindowHeight(event) {
       this.windowHeight = window.innerHeight;
-      // this.footerHeight = document.getElementsByClassName(
-      //   "footer-section"
-      // )[0].offsetHeight;
+      this.footerHeight = document.getElementsByClassName(
+        "nav"
+      )[0].offsetHeight;
+      console.log(this.footerHeight);
       // this.mainOffset = document.getElementsByClassName(
       //   "main-content"
       // )[0].offsetTop;
@@ -49,19 +50,23 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700|Fira+Sans:400,500,700,700i,900&display=swap");
 .nav {
   z-index: 1;
-  grid-column: 2;
+  grid-column: 1 / -1;
   grid-row: 1;
+  justify-self: center;
+  padding-top: 20px;
 }
-.content {
+/* .content {
   z-index: 1;
   grid-column: 1 / -1;
-  grid-row: 2;
-}
+  grid-row: 1;
+  height: 100%;
+  overflow-y: hidden;
+} */
 .layout {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr;
   width: 100%;
   max-width: 1240px;
   margin: 0 auto;
@@ -70,22 +75,22 @@ export default {
 .gbg {
   z-index: 0;
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   background-color: hsl(212, 92%, 43%);
-  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
-  height: 100vh;
+  clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
+  height: 120px;
   width: 100%;
 }
 
-@media only screen and (max-width: 1042px) {
+/* @media only screen and (max-width: 1042px) {
   .nav {
     grid-column: span 2;
   }
   .gbg {
     height: 66vh;
   }
-}
+} */
 
 * {
   box-sizing: border-box;
