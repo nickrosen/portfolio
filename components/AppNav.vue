@@ -1,7 +1,10 @@
 <template>
   <header>
+    <img
+      src="~/assets/img/me.png"
+      alt="me-face"
+    >
     <nav>
-
       <ul class="nav-list">
         <li
           v-for="(link, index) in links"
@@ -20,6 +23,7 @@
         </li>
       </ul>
     </nav>
+    <!-- {{$store.state.page}} -->
   </header>
 </template>
 
@@ -77,6 +81,34 @@ export default {
 </script>
 
 <style scoped>
+header {
+  width: 100%;
+  max-width: 1280px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+img {
+  width: 100%;
+  height: auto;
+  border: 8px solid hsl(40, 23%, 97%);
+  border-radius: 24px;
+  grid-column: 1 / span 1;
+  justify-self: start;
+  align-self: start;
+  background-color: var(--primary);
+  overflow: hidden;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.logo-link {
+  height: 82px;
+  width: 82px;
+  background-color: hsl(40, 23%, 97%);
+  border: 1px solid #ccc;
+  /* box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2); */
+  border-radius: 12px;
+}
 ul.nav-list {
   display: inline-flex;
   flex-direction: row;
@@ -84,10 +116,9 @@ ul.nav-list {
   padding: 0 20px;
   margin: 0;
   background-color: hsl(40, 23%, 97%);
-  border: 1px solid #ccc;
-  /* box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2); */
+  /* border: 4px solid var(--primary); */
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
-  /* border: 4px solid hsl(212, 92%, 43%); */
 }
 ul.nav-list > li {
   list-style-type: none;
@@ -112,11 +143,17 @@ a.nuxt-link-exact-active.nuxt-link-active {
   color: hsl(210, 24%, 16%);
 }
 a.nuxt-link-exact-active.nuxt-link-active > svg {
-  fill: hsl(210, 83%, 53%);
+  fill: var(--primary);
 }
 svg {
   fill: hsl(210, 16%, 82%);
 }
+/* @media only screen and (min-width: 1280px) {
+  .nav {
+    left: calc(50% + 10px);
+    padding: 20px 0;
+  }
+} */
 @media only screen and (max-width: 518px) {
   ul.nav-list {
     width: 100%;

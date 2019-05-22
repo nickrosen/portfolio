@@ -1,10 +1,13 @@
 <template>
-  <div
-    class="grid"
-    :style="`min-height:${windowHeight}px`"
-  >
-    <app-nav class="nav" />
-    <nuxt class="content" />
+  <div>
+    <div
+      class="grid"
+      :style="`min-height:${windowHeight}px`"
+    >
+      <app-nav class="nav" />
+      <nuxt class="content" />
+    </div>
+    <div class="gbg"></div>
   </div>
 </template>
 
@@ -45,30 +48,14 @@ export default {
 
 <style>
 @import url("https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700|Fira+Sans:400,500,700,700i,900&display=swap");
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 1fr;
-  height: 100%;
-}
-.nav {
-  grid-column: 1 / -1;
-  grid-row: 1;
-  justify-self: center;
-  padding-top: 20px;
-}
-.content {
-  grid-column: 1 / -1;
-  grid-row: 2;
-}
-
 * {
   box-sizing: border-box;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-kerning: auto;
-  /*   outline: 1px solid red; */
+  z-index: 1;
+  /* outline: 1px solid red; */
 }
 
 html {
@@ -82,17 +69,47 @@ body {
   color: hsl(40, 13%, 23%);
   background-color: hsl(40, 23%, 97%);
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+}
+.nav {
+  padding-top: 20px;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  justify-self: center;
+  z-index: 2;
+}
+.content {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  justify-self: center;
+}
+
 @media only screen and (max-width: 518px) {
   .grid {
     grid-template-rows: 1fr auto;
   }
   .nav {
-    width: 100%;
-    padding: 20px 10px;
     grid-row: 2;
   }
   .content {
     grid-row: 1;
   }
+}
+.gbg {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--primary);
+  clip-path: polygon(100% 0, 100% 30vmin, 30vmin 100%, 0 100%, 0 0);
+  height: 100vh;
+  width: 100%;
+}
+:root {
+  --primary: hsl(230, 49%, 41%);
 }
 </style>
