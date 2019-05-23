@@ -1,9 +1,5 @@
 <template>
   <header>
-    <img
-      src="~/assets/img/me.png"
-      alt="me-face"
-    >
     <nav>
       <ul class="nav-list">
         <li
@@ -81,13 +77,6 @@ export default {
 </script>
 
 <style scoped>
-header {
-  width: 100%;
-  max-width: 1280px;
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: 1fr 1fr;
-}
 img {
   width: 100%;
   height: auto;
@@ -111,10 +100,9 @@ img {
 }
 ul.nav-list {
   display: inline-flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  padding: 0 20px;
-  margin: 0;
+  padding: 0;
   background-color: hsl(40, 23%, 97%);
   /* border: 4px solid var(--primary); */
   box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
@@ -123,9 +111,7 @@ ul.nav-list {
 ul.nav-list > li {
   list-style-type: none;
 }
-/* ul.nav-list > li:not(:last-child) {
-  margin-right: 30px;
-} */
+
 ul.nav-list > li > a {
   text-decoration: none;
   color: hsl(211, 13%, 65%);
@@ -148,13 +134,8 @@ a.nuxt-link-exact-active.nuxt-link-active > svg {
 svg {
   fill: hsl(210, 16%, 82%);
 }
-/* @media only screen and (min-width: 1280px) {
-  .nav {
-    left: calc(50% + 10px);
-    padding: 20px 0;
-  }
-} */
-@media only screen and (max-width: 518px) {
+
+@media only screen and (max-width: 653px) {
   ul.nav-list {
     width: 100%;
     display: flex;

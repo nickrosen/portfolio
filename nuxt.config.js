@@ -34,7 +34,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ["~/css/styles.css"],
 
   // Run middleware
   router: {

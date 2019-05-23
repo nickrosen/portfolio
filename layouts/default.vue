@@ -1,14 +1,15 @@
 <template>
-  <div>
-    <div
-      class="grid"
-      :style="`min-height:${windowHeight}px`"
-    >
-      <app-nav class="nav" />
-      <nuxt class="content" />
-    </div>
-    <div class="gbg"></div>
+  <!-- <div style="background: #ccc"> -->
+  <!-- <div :style="`min-height:${windowHeight}px`"> -->
+  <div
+    class="layout-grid"
+    :style="`min-height:${windowHeight}px`"
+  >
+    <app-nav class="nav" />
+    <nuxt class="content" />
   </div>
+  <!-- <div class="gbg"></div> -->
+  <!-- </div> -->
 </template>
 
 <script>
@@ -47,69 +48,24 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700|Fira+Sans:400,500,700,700i,900&display=swap");
-* {
-  box-sizing: border-box;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-kerning: auto;
-  z-index: 1;
-  /* outline: 1px solid red; */
-}
-
-html {
-  font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: "Fira Sans", sans-serif;
-  color: hsl(40, 13%, 23%);
-  background-color: hsl(40, 23%, 97%);
-}
-
-.grid {
+.layout-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 1fr;
+  grid-gap: 20px;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
 }
-.nav {
-  padding-top: 20px;
-  grid-column: 1 / -1;
-  grid-row: 1 / -1;
-  justify-self: center;
-  z-index: 2;
-}
-.content {
-  grid-column: 1 / -1;
-  grid-row: 2;
-  justify-self: center;
-}
-
-@media only screen and (max-width: 518px) {
-  .grid {
-    grid-template-rows: 1fr auto;
-  }
+@media only screen and (max-width: 653px) {
   .nav {
-    grid-row: 2;
+    grid-column: 1 / -1;
+    grid-row: 3;
+    align-self: end;
+    margin: 0 10px;
   }
   .content {
-    grid-row: 1;
+    grid-column: 1 / -1;
+    grid-row: 1 / span 2;
+    margin: 0 10px;
   }
-}
-.gbg {
-  z-index: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: var(--primary);
-  clip-path: polygon(100% 0, 100% 30vmin, 30vmin 100%, 0 100%, 0 0);
-  height: 100vh;
-  width: 100%;
-}
-:root {
-  --primary: hsl(230, 49%, 41%);
 }
 </style>
