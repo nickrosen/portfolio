@@ -63,12 +63,12 @@ export default {
   align-self: end;
   justify-self: end;
 }
-.light-switch {
+.placeholder {
   grid-column: 3;
   grid-row: 1;
   align-self: start;
 }
-.placeholder {
+.light-switch {
   grid-column: 1;
   grid-row: 1 / -1;
   align-self: end;

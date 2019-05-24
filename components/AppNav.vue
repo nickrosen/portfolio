@@ -77,36 +77,15 @@ export default {
 </script>
 
 <style scoped>
-img {
-  width: 100%;
-  height: auto;
-  border: 8px solid hsl(40, 23%, 97%);
-  border-radius: 24px;
-  grid-column: 1 / span 1;
-  justify-self: start;
-  align-self: start;
-  background-color: var(--primary);
-  overflow: hidden;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-}
-
-.logo-link {
-  height: 82px;
-  width: 82px;
-  background-color: hsl(40, 23%, 97%);
-  border: 1px solid #ccc;
-  /* box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2); */
-  border-radius: 12px;
-}
 ul.nav-list {
   display: inline-flex;
   flex-direction: column;
   flex-wrap: wrap;
   padding: 0;
-  background-color: hsl(40, 23%, 97%);
-  border: 1px solid var(--primary-border);
+  background-color: var(--primary-border);
   margin: 0;
-  /* box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2); */
+  /* border: 1px solid var(--primary-border); */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   /* border-radius: 12px; */
   /* border-top-left-radius: 0;
   border-bottom-left-radius: 0; */
@@ -117,7 +96,7 @@ ul.nav-list > li {
 
 ul.nav-list > li > a {
   text-decoration: none;
-  color: hsl(211, 13%, 65%);
+  color: var(--primary-9);
   font-size: 18px;
   padding: 14px 20px;
   display: flex;
@@ -135,7 +114,7 @@ a.nuxt-link-exact-active.nuxt-link-active > svg {
   fill: var(--primary);
 }
 svg {
-  fill: hsl(210, 16%, 82%);
+  fill: var(--primary-4);
 }
 
 @media only screen and (max-width: 653px) {
@@ -148,7 +127,6 @@ svg {
     padding: 0 10px;
   }
   ul.nav-list > li > a {
-    color: hsl(211, 13%, 65%);
     font-size: 16px;
     padding: 14px 10px;
   }

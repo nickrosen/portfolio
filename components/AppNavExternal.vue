@@ -38,36 +38,36 @@ export default {
           url: "/",
           title: "Twitter",
           icon: "icon-twitter",
-          height: "30px",
-          width: "auto"
+          height: "auto",
+          width: "20px"
         },
         {
           url: "/contact",
-          title: "Dev",
+          title: "DEV.to",
           icon: "icon-dev",
-          height: "30px",
-          width: "auto"
+          height: "auto",
+          width: "20px"
         },
         {
           url: "/about",
           title: "LinkedIn",
           icon: "icon-linked-in",
-          height: "30px",
-          width: "auto"
+          height: "auto",
+          width: "20px"
         },
         {
           url: "/work",
           title: "Codepen",
           icon: "icon-code-pen",
-          height: "30px",
-          width: "auto"
+          height: "auto",
+          width: "20px"
         },
         {
           url: "/blog",
           title: "GitHub",
           icon: "icon-git-hub",
-          height: "30px",
-          width: "auto"
+          height: "auto",
+          width: "20px"
         }
       ],
       fullScreenNav: false
@@ -77,39 +77,12 @@ export default {
 </script>
 
 <style scoped>
-img {
-  width: 100%;
-  height: auto;
-  border: 8px solid hsl(40, 23%, 97%);
-  border-radius: 24px;
-  grid-column: 1 / span 1;
-  justify-self: start;
-  align-self: start;
-  background-color: var(--primary);
-  overflow: hidden;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-}
-
-.logo-link {
-  height: 82px;
-  width: 82px;
-  background-color: hsl(40, 23%, 97%);
-  border: 1px solid #ccc;
-  /* box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2); */
-  border-radius: 12px;
-}
 ul.nav-list {
   display: inline-flex;
   flex-direction: column;
   flex-wrap: wrap;
   padding: 0;
-  background-color: hsl(40, 23%, 97%);
-  border: 1px solid var(--primary-border);
   margin: 0;
-  /* box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2); */
-  /* border-radius: 12px; */
-  /* border-top-left-radius: 0;
-  border-bottom-left-radius: 0; */
 }
 ul.nav-list > li {
   list-style-type: none;
@@ -118,8 +91,8 @@ ul.nav-list > li {
 ul.nav-list > li > a {
   text-decoration: none;
   color: hsl(211, 13%, 65%);
-  font-size: 18px;
-  padding: 14px 20px;
+  font-size: 15px;
+  padding: 14px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -127,6 +100,7 @@ ul.nav-list > li > a {
 ul.nav-list > li > a > span {
   /* line-height: 0.9; */
   font-weight: 400;
+  margin-top: 2px;
 }
 
 @media only screen and (max-width: 653px) {
