@@ -117,13 +117,13 @@ export default {
   .external-nav {
     grid-column: 1 / -1;
     grid-row: 1;
-    align-self: end;
+    align-self: center;
     justify-self: start;
   }
   .light-switch {
     grid-column: 3;
     grid-row: 1;
-    align-self: start;
+    align-self: center;
     justify-self: end;
   }
 }
