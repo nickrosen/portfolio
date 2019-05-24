@@ -103,6 +103,7 @@ export default {
     grid-template-columns: auto 1fr auto;
     grid-template-rows: auto 1fr auto;
     margin: 10px;
+    grid-gap: 10px;
   }
   .nav {
     grid-column: 1 / -1;
