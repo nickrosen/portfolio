@@ -1,7 +1,5 @@
 <template>
   <svg
-    width="30px"
-    height="auto"
     viewBox="0 0 250 204"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
@@ -43,5 +41,14 @@
 export default {};
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+svg {
+  width: 30px;
+  height: auto;
+}
+@media only screen and (max-width: 653px) {
+  svg {
+    height: 20px;
+  }
+}
 </style>

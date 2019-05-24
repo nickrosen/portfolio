@@ -39,7 +39,7 @@ export default {};
   grid-column: 1;
   grid-row: 1 / -1;
   justify-self: start;
-  align-self: center;
+  align-self: start;
 }
 
 .home-page {

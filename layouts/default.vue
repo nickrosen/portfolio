@@ -3,9 +3,9 @@
   <!-- <div :style="`min-height:${windowHeight}px`"> -->
   <div
     class="layout-grid"
-    :style="`min-height:calc(${windowHeight}px - 40px)`"
+    :style="`min-height:calc(${windowHeight}px - ${dynamicMargin})`"
   >
-    <app-logo-placeholder class="placeholder" />
+    <!-- <app-logo-placeholder class="placeholder" /> -->
     <app-nav class="nav" />
     <nuxt class="content" />
     <app-nav-external class="external-nav" />
@@ -31,7 +31,8 @@ export default {
   data() {
     return {
       windowHeight: null,
-      footerHeight: null
+      footerHeight: null,
+      dynamicMargin: "40px"
       // mainOffset: null
     };
   },
@@ -41,7 +42,11 @@ export default {
       this.footerHeight = document.getElementsByClassName(
         "nav"
       )[0].offsetHeight;
-      console.log(this.footerHeight);
+
+      const windowWidth = window.innerWidth;
+      if (windowWidth < 654) {
+        this.dynamicMargin = "20px";
+      }
       // this.mainOffset = document.getElementsByClassName(
       //   "main-content"
       // )[0].offsetTop;
@@ -94,6 +99,11 @@ export default {
   padding: 20px;
 }
 @media only screen and (max-width: 653px) {
+  .layout-grid {
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto 1fr auto;
+    margin: 10px;
+  }
   .nav {
     grid-column: 1 / -1;
     grid-row: 3;
@@ -101,7 +111,13 @@ export default {
   }
   .content {
     grid-column: 1 / -1;
-    grid-row: 1 / span 2;
+    grid-row: 2;
+  }
+  .external-nav {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    align-self: end;
+    justify-self: end;
   }
 }
 </style>

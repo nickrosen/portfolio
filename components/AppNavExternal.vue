@@ -57,7 +57,7 @@ export default {
         },
         {
           url: "/work",
-          title: "Codepen",
+          title: "CodePen",
           icon: "icon-code-pen",
           height: "auto",
           width: "20px"
@@ -90,16 +90,16 @@ ul.nav-list > li {
 
 ul.nav-list > li > a {
   text-decoration: none;
-  color: hsl(211, 13%, 65%);
-  font-size: 15px;
-  padding: 14px 0;
+  color: var(--primary-9);
+  font-size: 14px;
+  padding: 28px 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 ul.nav-list > li > a > span {
   /* line-height: 0.9; */
-  font-weight: 400;
+  font-weight: 500;
   margin-top: 2px;
 }
 
@@ -113,16 +113,8 @@ ul.nav-list > li > a > span {
     padding: 0 10px;
   }
   ul.nav-list > li > a {
-    color: hsl(211, 13%, 65%);
-    font-size: 16px;
-    padding: 14px 10px;
-  }
-}
-@media only screen and (max-width: 372px) {
-  ul.nav-list > li > a {
-    color: hsl(211, 13%, 65%);
     font-size: 14px;
-    padding: 14px 8px;
+    padding: 0 10px;
   }
 }
 </style>

@@ -133,7 +133,6 @@ svg {
 }
 @media only screen and (max-width: 372px) {
   ul.nav-list > li > a {
-    color: hsl(211, 13%, 65%);
     font-size: 14px;
     padding: 14px 8px;
   }
