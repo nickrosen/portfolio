@@ -40,4 +40,18 @@ button > span {
   font-size: 15px;
   margin-top: 2px;
 }
+@media only screen and (max-width: 653px) {
+  button {
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  button > span {
+    display: none;
+  }
+  .bulb-icon {
+    height: 20px;
+    width: auto;
+  }
+}
 </style>

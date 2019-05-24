@@ -120,5 +120,11 @@ export default {
     align-self: end;
     justify-self: start;
   }
+  .light-switch {
+    grid-column: 3;
+    grid-row: 1;
+    align-self: start;
+    justify-self: end;
+  }
 }
 </style>
