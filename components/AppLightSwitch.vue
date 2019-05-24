@@ -50,7 +50,7 @@ button > span {
     display: none;
   }
   .bulb-icon {
-    height: 20px;
+    height: 24px;
     width: auto;
   }
 }

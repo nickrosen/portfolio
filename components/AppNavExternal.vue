@@ -124,5 +124,9 @@ svg {
   ul.nav-list > li > a > span {
     display: none;
   }
+  svg {
+    width: 24px;
+    height: 24px;
+  }
 }
 </style>
