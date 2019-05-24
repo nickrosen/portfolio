@@ -19,53 +19,53 @@
         </li>
       </ul>
     </nav>
-    <!-- {{$store.state.page}} -->
   </header>
 </template>
 
 <script>
-import SvgHome from "~/components/SvgHome.vue";
-import SvgAbout from "~/components/SvgAbout.vue";
-import SvgWork from "~/components/SvgWork.vue";
-import SvgBlog from "~/components/SvgBlog.vue";
-import SvgContact from "~/components/SvgContact.vue";
+import IconCodePen from "~/components/svg/IconCodePen.vue";
+import IconDev from "~/components/svg/IconDev.vue";
+import IconGitHub from "~/components/svg/IconGitHub.vue";
+import IconLinkedIn from "~/components/svg/IconLinkedIn.vue";
+import IconTwitter from "~/components/svg/IconTwitter.vue";
+
 export default {
-  components: { SvgHome, SvgAbout, SvgWork, SvgBlog, SvgContact },
+  components: { IconCodePen, IconDev, IconGitHub, IconTwitter, IconLinkedIn },
   data() {
     return {
       links: [
         {
           url: "/",
-          title: "Home",
-          icon: "svg-home",
-          height: "30px",
-          width: "auto"
-        },
-        {
-          url: "/about",
-          title: "About",
-          icon: "svg-about",
-          height: "30px",
-          width: "auto"
-        },
-        {
-          url: "/work",
-          title: "Work",
-          icon: "svg-work",
-          height: "30px",
-          width: "auto"
-        },
-        {
-          url: "/blog",
-          title: "Blog",
-          icon: "svg-blog",
+          title: "Twitter",
+          icon: "icon-twitter",
           height: "30px",
           width: "auto"
         },
         {
           url: "/contact",
-          title: "Contact",
-          icon: "svg-contact",
+          title: "Dev",
+          icon: "icon-dev",
+          height: "30px",
+          width: "auto"
+        },
+        {
+          url: "/about",
+          title: "LinkedIn",
+          icon: "icon-linked-in",
+          height: "30px",
+          width: "auto"
+        },
+        {
+          url: "/work",
+          title: "Codepen",
+          icon: "icon-code-pen",
+          height: "30px",
+          width: "auto"
+        },
+        {
+          url: "/blog",
+          title: "GitHub",
+          icon: "icon-git-hub",
           height: "30px",
           width: "auto"
         }
@@ -127,15 +127,6 @@ ul.nav-list > li > a {
 ul.nav-list > li > a > span {
   /* line-height: 0.9; */
   font-weight: 400;
-}
-a.nuxt-link-exact-active.nuxt-link-active {
-  color: hsl(210, 24%, 16%);
-}
-a.nuxt-link-exact-active.nuxt-link-active > svg {
-  fill: var(--primary);
-}
-svg {
-  fill: hsl(210, 16%, 82%);
 }
 
 @media only screen and (max-width: 653px) {

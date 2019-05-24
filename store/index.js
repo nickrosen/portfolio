@@ -53,5 +53,8 @@ export const actions = {
   getSiteInfo({ state, commit }) {
     const info = require("~/content/setup/info.json");
     commit("SET_INFO", info);
+  },
+  getThemePreference({state, commit}){
+    
   }
 };

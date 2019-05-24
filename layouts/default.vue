@@ -3,10 +3,13 @@
   <!-- <div :style="`min-height:${windowHeight}px`"> -->
   <div
     class="layout-grid"
-    :style="`min-height:${windowHeight}px`"
+    :style="`min-height:calc(${windowHeight}px - 40px)`"
   >
+    <app-logo-placeholder class="placeholder" />
     <app-nav class="nav" />
     <nuxt class="content" />
+    <app-nav-external class="external-nav" />
+    <app-light-switch class="light-switch" />
   </div>
   <!-- <div class="gbg"></div> -->
   <!-- </div> -->
@@ -14,10 +17,16 @@
 
 <script>
 import AppNav from "~/components/AppNav.vue";
+import AppNavExternal from "~/components/AppNavExternal.vue";
+import AppLightSwitch from "~/components/AppLightSwitch.vue";
+import AppLogoPlaceholder from "~/components/AppLogoPlaceholder.vue";
 
 export default {
   components: {
-    AppNav
+    AppNav,
+    AppNavExternal,
+    AppLightSwitch,
+    AppLogoPlaceholder
   },
   data() {
     return {
@@ -48,24 +57,51 @@ export default {
 </script>
 
 <style>
+.external-nav {
+  grid-column: 3;
+  grid-row: 2 / -1;
+  align-self: end;
+  justify-self: end;
+}
+.light-switch {
+  grid-column: 3;
+  grid-row: 1;
+  align-self: start;
+}
+.placeholder {
+  grid-column: 1;
+  grid-row: 1 / -1;
+  align-self: end;
+  justify-self: start;
+}
 .layout-grid {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: auto 1fr auto;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 1fr auto;
   height: 100%;
+  margin: 20px;
+}
+.nav {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  align-self: start;
+}
+.content {
+  grid-column: 2;
+  grid-row: 1 / -1;
+  border: 1px solid var(--primary-border);
+  padding: 20px;
 }
 @media only screen and (max-width: 653px) {
   .nav {
     grid-column: 1 / -1;
     grid-row: 3;
     align-self: end;
-    margin: 0 10px;
   }
   .content {
     grid-column: 1 / -1;
     grid-row: 1 / span 2;
-    margin: 0 10px;
   }
 }
 </style>
