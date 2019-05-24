@@ -117,7 +117,7 @@ export default {
     grid-column: 1 / -1;
     grid-row: 1;
     align-self: end;
-    justify-self: end;
+    justify-self: start;
   }
 }
 </style>

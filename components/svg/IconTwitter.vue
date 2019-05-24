@@ -42,13 +42,4 @@ export default {};
 </script>
 
 <style scoped>
-svg {
-  width: 30px;
-  height: auto;
-}
-@media only screen and (max-width: 653px) {
-  svg {
-    height: 20px;
-  }
-}
 </style>

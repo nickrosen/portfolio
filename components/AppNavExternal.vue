@@ -102,6 +102,10 @@ ul.nav-list > li > a > span {
   font-weight: 500;
   margin-top: 2px;
 }
+svg {
+  width: 20px;
+  height: 20px;
+}
 
 @media only screen and (max-width: 653px) {
   ul.nav-list {
@@ -110,11 +114,15 @@ ul.nav-list > li > a > span {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0 10px;
+    padding: 0;
   }
   ul.nav-list > li > a {
     font-size: 14px;
-    padding: 0 10px;
+    padding: 0;
+    margin-right: 20px;
+  }
+  ul.nav-list > li > a > span {
+    display: none;
   }
 }
 </style>
