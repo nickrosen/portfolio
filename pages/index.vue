@@ -194,11 +194,14 @@ export default {};
   }
   .hi {
     grid-column: 1;
-    grid-row: 1;
+    grid-row: 1 / -1;
   }
   .intro {
-    grid-column: 1 / -1;
-    grid-row: 2;
+    grid-column: 2;
+    grid-row: 1 / -1;
+  }
+  .intro > h1 {
+    font-size: 5vw;
   }
 }
 @media only screen and (max-width: 653px) {
