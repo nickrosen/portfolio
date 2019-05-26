@@ -82,7 +82,7 @@ ul.nav-list {
   flex-direction: column;
   flex-wrap: wrap;
   padding: 0;
-  background-color: var(--primary-border);
+  background-color: var(--light-0);
   margin: 0;
   /* border: 1px solid var(--primary-border); */
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);

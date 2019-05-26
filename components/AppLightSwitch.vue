@@ -25,9 +25,8 @@ button {
   /* box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2); */
   /* border-radius: 12px; */
   justify-self: end;
-  background-color: var(--primary-border);
+  background-color: var(--light-0);
   border: none;
-  color: hsl(211, 13%, 65%);
   font-size: 18px;
   display: flex;
   flex-direction: column;

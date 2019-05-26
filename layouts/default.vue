@@ -8,7 +8,7 @@
     <!-- <app-logo-placeholder class="placeholder" /> -->
     <app-nav class="nav" />
     <nuxt class="content" />
-    <app-nav-external class="external-nav" />
+    <!-- <app-nav-external class="external-nav" /> -->
     <app-light-switch class="light-switch" />
   </div>
   <!-- <div class="gbg"></div> -->
@@ -64,8 +64,8 @@ export default {
 <style>
 .external-nav {
   grid-column: 3;
-  grid-row: 2 / -1;
-  align-self: end;
+  grid-row: 1 / -1;
+  align-self: center;
   justify-self: end;
 }
 .placeholder {
@@ -83,6 +83,7 @@ export default {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr;
   grid-template-rows: 1fr auto;
   height: 100%;
   margin: 20px;
@@ -95,8 +96,8 @@ export default {
 .content {
   grid-column: 2;
   grid-row: 1 / -1;
-  border: 1px solid var(--primary-border);
-  padding: 20px;
+  /* border: 1px solid var(--primary-border);
+  padding: 20px; */
 }
 @media only screen and (max-width: 653px) {
   .layout-grid {
