@@ -193,12 +193,12 @@ export default {};
     /* grid-template-rows: auto; */
   }
   .hi {
-    grid-column: 1;
-    grid-row: 1 / -1;
+    grid-column: 1 / -1;
+    grid-row: 1;
   }
   .intro {
-    grid-column: 2;
-    grid-row: 1 / -1;
+    grid-column: 1 / -1;
+    grid-row: 2;
   }
   .intro > h1 {
     font-size: 5vw;
