@@ -155,15 +155,16 @@ export default {};
     grid-template-rows: 1fr 1fr;
   }
   .img-col > img {
-    grid-column: 2;
+    grid-column: 1 / -1;
     grid-row: 1 / -1;
   }
   .img-col > div {
-    height: 100%;
+    /* height: 100%;
     width: 100%;
     background-color: var(--primary-1);
     z-index: 0;
-    transition: all 0.2s;
+    transition: all 0.2s; */
+    display: none;
   }
   .box-1 {
     grid-column: 1;
