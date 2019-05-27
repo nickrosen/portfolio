@@ -31,7 +31,7 @@ body {
   margin: 0;
   font-family: "Fira Sans", sans-serif;
   color: hsl(209, 20%, 25%);
-  background-color: var(--primary-0);
+  background-color: hsl(225, 57%, 67%);
   font-size: 18px;
   line-height: 28px;
 }

@@ -32,9 +32,10 @@ export default {};
 .img-col > div {
   height: 100%;
   width: 100%;
-  background-color: var(--primary-1);
+  background-color: var(--primary-0);
   z-index: 0;
-  transition: all 0.2s;
+  transition: all 2s;
+  border: 4px solid var(--primary-5);
 }
 .img-col > div:hover {
   background-color: var(--primary-2);
@@ -78,13 +79,14 @@ export default {};
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--primary-1);
+  background-color: var(--primary-0);
   width: 100%;
   padding: 20px;
   margin: 0;
   grid-column: 1;
   grid-row: 2;
   width: 100%;
+  border: 4px solid var(--primary-5);
 }
 .intro > h1 {
   font-size: 4.2vw;
@@ -100,8 +102,9 @@ export default {};
   /* border: 1px solid var(--primary-border); */
   line-height: 1;
   font-size: 25vw;
-  background-color: var(--primary-1);
+  background-color: var(--primary-0);
   color: var(--primary);
+  border: 4px solid var(--primary-5);
   grid-column: 1;
   grid-row: 1;
   width: 100%;
@@ -157,7 +160,8 @@ export default {};
   .img-col > img {
     grid-column: 1 / -1;
     grid-row: 1 / -1;
-    background-color: var(--primary-1);
+    background-color: var(--primary-0);
+    border: 4px solid var(--primary-5);
   }
   .img-col > div {
     display: none;

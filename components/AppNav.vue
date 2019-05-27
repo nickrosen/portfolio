@@ -114,7 +114,7 @@ a.nuxt-link-exact-active.nuxt-link-active > svg {
   fill: var(--primary);
 }
 svg {
-  fill: var(--primary-4);
+  fill: var(--primary-1);
 }
 
 @media only screen and (max-width: 653px) {
