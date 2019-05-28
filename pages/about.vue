@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="about-page">
     about
   </div>
 </template>
@@ -9,4 +9,8 @@ export default {};
 </script>
 
 <style scoped>
+.about-page {
+  background-color: var(--primary-0);
+  border: 4px solid var(--primary-5);
+}
 </style>

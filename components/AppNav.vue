@@ -96,7 +96,7 @@ ul.nav-list > li {
 
 ul.nav-list > li > a {
   text-decoration: none;
-  color: var(--primary-9);
+  color: hsl(211, 27%, 70%);
   font-size: 18px;
   padding: 14px 20px;
   display: flex;
@@ -111,10 +111,10 @@ a.nuxt-link-exact-active.nuxt-link-active {
   color: hsl(210, 24%, 16%);
 }
 a.nuxt-link-exact-active.nuxt-link-active > svg {
-  fill: var(--primary);
+  fill: hsl(44, 92%, 63%);
 }
 svg {
-  fill: var(--primary-1);
+  fill: hsl(212, 33%, 89%);
 }
 
 @media only screen and (max-width: 653px) {
