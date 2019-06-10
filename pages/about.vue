@@ -1,55 +1,100 @@
 <template>
-  <section class="grey-1 container flex row wrap">
+  <section class="grey-1 grid">
     <div class="title-area wave mt-24">
       <div class="title-box blue-bg-11 py-12">
         <h2 class="title">About Me</h2>
       </div>
     </div>
-    <div class="content-area mt-24">
-      <div class="flex row wrap justify-center">
-        <div class="left-col">
-          <div class="border-y mb-24">
-            <h2 class="headline">Professional</h2>
-          </div>
-          <div>
-            <p>I began my web dev career building Wordpress sites for friends and family members and quickly transitioned to contracting full time.</p>
-            <p>As a contractor, I was lucky enough to work with some great companies and digital agencies and had a chance to learn a lot about different types of web development as well as how business can effectively utilize digital channels to increase revenue.</p>
-            <p>After about 5 years of contracting, I was feeling a bit isolated and like my work had stagnated, so I decided to make a change and joined the web team at ESET.  At ESET, I was able to focus on front end development and really fell in love with the concept of using empathy to create web experiences that are intuitive and fun to use.  This was also my forst introduction to front end frameworks (Angular JS) and the beginning of my deep dive into the world of JS.</p>
-          </div>
-        </div>
-        <div class="right-col">
-          <p class="mt-0">I left ESET in the fall of 2018 to join Renovation Realty as Digital Strategy Director with the goals of launching 2 new businesses, SoldKey & Apartment Worth, single family and multifamily property iBuyers as well as revamping the web presence and marketing efforts of Renovation Realty.</p>
-          <p>To date, I have designed and built SoldKey.com and ApartmentWorth.com, implemented ads and remarketing using Google and Facebook ads, and configured Google Analytics and Data Studio for optimization.</p>
-          <div class="border-y mb-24">
-            <h2 class="headline">Personal</h2>
-          </div>
-          <p>I'm a San Diego native living in Sherman Heights with my fantastic wife Kat and our dog Cole.</p>
-          <p>I like learning, breakfast foods, solving problems with code, racing sailboats, music, books, puppies, economics, sandwiches, martinis, and other stuff.</p>   
-        </div>
-      </div>
+
+    <img src="~/assets/img/me.png">
+
+    <div class="copy">
+      <h1>My name's Nick Rosen, I'm a web app developer based in San Diego, CA.</h1>
+      <p>I've been building stuff on the web professionally since 2011 and have had the chance to work on a wide range of projects from wordpress themes and plugins to serverless spa's and cloud apps. My favorite thing about this job is the constant need to learn new things to better solve problems.</p>
+      <p>My go to tech stack at the moment is JAM (Javascript API's and Markup). I'm really loving Vue on the front end and either using Netlify or Firebase for continuous integration via GitHub and cloud/serverless functions for the backend.</p>
+      <p>I live in the Sherman Heights neighborhood with my wife Kat and our black lab Cole. In my free time I like to sail, read, and explore San Diego.</p>
     </div>
+
   </section>
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        title: 'Nick Rosen | About Me'
-      }
-    },
-    head () {
-      return {
-          title: this.title,
-          meta: [
-              // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-              { hid: 'description', name: 'description', content: 'About Nick Rosen' }
-          ]
-      }
-    }
+export default {
+  data() {
+    return {
+      title: "Nick Rosen | About Me"
+    };
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        { hid: "description", name: "description", content: "About Nick Rosen" }
+      ]
+    };
   }
+};
 </script>
 
 <style scoped>
-
+img {
+  max-width: 440px;
+  width: 100%;
+  background-color: var(--blue-10);
+  margin-top: 110px;
+  border: 1px solid var(--teal-9);
+}
+.grid {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 240px 1fr auto;
+  width: 100%;
+  max-width: 1240px;
+  padding: 0 18px;
+  margin: 0 auto;
+}
+.copy {
+  grid-column: 3;
+  grid-row: 1;
+}
+@media only screen and (max-width: 1124px) {
+  .copy {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .grid {
+    grid-template-columns: auto 1fr;
+  }
+  img {
+    grid-column: 2;
+    grid-row: 1;
+    margin-top: 0;
+  }
+}
+@media only screen and (max-width: 680px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+  }
+  img {
+    grid-row: 2;
+    grid-column: 1;
+  }
+  .title-area {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  .copy {
+    grid-row: 3;
+    grid-column: 1;
+  }
+}
+p,
+h1 {
+  max-width: 540px;
+}
+h1 {
+  margin-top: 20px;
+}
 </style>
