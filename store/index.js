@@ -1,12 +1,15 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import Cookie from "js-cookie";
 Vue.use(Vuex);
 
 export const state = () => ({
   blogPosts: [],
   allPages: [],
   siteInfo: [],
-  page: "index"
+  page: "index",
+  theme: "light",
+  mobileMenu: false
 });
 
 export const mutations = {
@@ -19,6 +22,14 @@ export const mutations = {
   SET_INFO(state, data) {
     state.siteInfo = data;
   },
+  SET_MOBILE_MENU(state, menu) {
+    state.mobileMenu = menu;
+  },
+  SET_THEME(state, theme) {
+    state.theme = theme;
+    localStorage.setItem("theme", theme);
+    Cookie.set("theme", theme);
+  },
   UPDATE_PAGE(state, pageName) {
     state.page = pageName;
   }
@@ -29,6 +40,7 @@ export const actions = {
     await dispatch("getSiteInfo");
     await dispatch("getBlogPosts");
     await dispatch("getPages");
+    // await dispatch("getThemePreference");
   },
   async getBlogPosts({ state, commit }) {
     const context = await require.context("~/content/blog/", false, /\.json$/);
@@ -53,8 +65,19 @@ export const actions = {
   getSiteInfo({ state, commit }) {
     const info = require("~/content/setup/info.json");
     commit("SET_INFO", info);
-  },
-  getThemePreference({state, commit}){
-    
   }
+  // getThemePreference(req) {
+  //   // if (req) {
+  //   //   if (!req.headers.cookie) {
+  //   //     return;
+  //   //   }
+  //   const themeCookie = req.headers.cookie
+  //     .split(";")
+  //     .find(c => c.trim().startsWith("theme="));
+  //   commit("SET_THEME", themeCookie);
+  //   // } else if (process.browser) {
+  //   //   commit("SET_THEME", localStorage.getItem("theme"));
+  //   // }
+  //   console.log(themeCookie);
+  // }
 };

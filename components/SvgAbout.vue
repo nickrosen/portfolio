@@ -42,4 +42,7 @@ export default {
 </script>
 
 <style scoped>
+.nuxt-link-exact-active.nuxt-link-active > svg > .primary {
+  fill: hsl(221, 68%, 93%);
+}
 </style>

@@ -1,40 +1,38 @@
 <template>
-  <!-- <div style="background: #ccc"> -->
-  <!-- <div :style="`min-height:${windowHeight}px`"> -->
   <div
     class="layout-grid"
-    :style="`min-height:calc(${windowHeight}px - ${dynamicMargin})`"
+    :class="theme"
+    :style="`min-height:calc(${windowHeight}px)`"
   >
-    <!-- <app-logo-placeholder class="placeholder" /> -->
-    <app-nav class="nav" />
+    <app-header
+      class="nav"
+      :class="{'open': $store.state.mobileMenu}"
+    />
     <nuxt class="content" />
-    <!-- <app-nav-external class="external-nav" /> -->
-    <app-light-switch class="light-switch" />
+    <app-footer class="footer" />
+
   </div>
-  <!-- <div class="gbg"></div> -->
-  <!-- </div> -->
 </template>
 
 <script>
-import AppNav from "~/components/AppNav.vue";
-import AppNavExternal from "~/components/AppNavExternal.vue";
-import AppLightSwitch from "~/components/AppLightSwitch.vue";
-import AppLogoPlaceholder from "~/components/AppLogoPlaceholder.vue";
+import AppHeader from "~/components/AppHeader.vue";
+import AppFooter from "~/components/AppFooter.vue";
 
 export default {
   components: {
-    AppNav,
-    AppNavExternal,
-    AppLightSwitch,
-    AppLogoPlaceholder
+    AppHeader,
+    AppFooter
   },
   data() {
     return {
       windowHeight: null,
-      footerHeight: null,
-      dynamicMargin: "40px"
-      // mainOffset: null
+      footerHeight: null
     };
+  },
+  computed: {
+    theme() {
+      return this.$store.state.theme;
+    }
   },
   methods: {
     getWindowHeight(event) {
@@ -44,88 +42,63 @@ export default {
       )[0].offsetHeight;
 
       const windowWidth = window.innerWidth;
-      if (windowWidth < 654) {
-        this.dynamicMargin = "20px";
-      }
-      // this.mainOffset = document.getElementsByClassName(
-      //   "main-content"
-      // )[0].offsetTop;
-      // console.log();
-      // this.windowHeight = document.documentElement.clientHeight;
+      // if (windowWidth < 654) {
+      //   this.dynamicMargin = "20px";
+      // }
     }
   },
   mounted: function() {
     window.addEventListener("resize", this.getWindowHeight);
     this.getWindowHeight();
+    let mql = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (localStorage.getItem("theme")) {
+      this.$store.commit("SET_THEME", localStorage.getItem("theme"));
+    }
+    if (mql == true && !localStorage.getItem("theme")) {
+      this.$store.commit("SET_THEME", "dark");
+    }
+    // console.log(mql == false);
   }
 };
 </script>
 
 <style>
-.external-nav {
-  grid-column: 3;
-  grid-row: 1 / -1;
-  align-self: center;
-  justify-self: end;
-}
-.placeholder {
-  grid-column: 3;
-  grid-row: 1;
-  align-self: start;
-}
-.light-switch {
-  grid-column: 1;
-  grid-row: 1 / -1;
-  align-self: end;
-  justify-self: start;
-}
 .layout-grid {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: auto 1fr auto;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: 1fr auto;
-  height: 100%;
-  margin: 20px;
+  padding: 20px;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+}
+.layout-grid.light {
+  background-color: var(--light-background);
+  color: var(--light-text);
+}
+.layout-grid.dark {
+  background-color: var(--dark-background);
+  color: var(--dark-text);
 }
 .nav {
+  grid-row: 1;
   grid-column: 1;
-  grid-row: 1 / 3;
-  align-self: start;
+}
+.nav.open {
+  grid-row: 1 / span 2;
+  z-index: 2;
+  position: relative;
 }
 .content {
-  grid-column: 2;
-  grid-row: 1 / -1;
-  /* border: 1px solid var(--primary-border);
-  padding: 20px; */
+  grid-row: 2;
+  grid-column: 1;
+}
+.footer {
+  grid-row: 3;
+  grid-column: 1;
 }
 @media only screen and (max-width: 653px) {
   .layout-grid {
-    grid-template-columns: auto 1fr auto;
-    grid-template-rows: auto 1fr auto;
-    margin: 10px;
     grid-gap: 10px;
-  }
-  .nav {
-    grid-column: 1 / -1;
-    grid-row: 3;
-    align-self: end;
-  }
-  .content {
-    grid-column: 1 / -1;
-    grid-row: 2;
-  }
-  .external-nav {
-    grid-column: 1 / -1;
-    grid-row: 1;
-    align-self: center;
-    justify-self: start;
-  }
-  .light-switch {
-    grid-column: 3;
-    grid-row: 1;
-    align-self: center;
-    justify-self: end;
+    padding: 10px;
   }
 }
 </style>

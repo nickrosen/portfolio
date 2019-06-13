@@ -31,19 +31,18 @@ body {
   margin: 0;
   font-family: "Fira Sans", sans-serif;
   color: hsl(209, 20%, 25%);
-  background-color: hsl(214, 15%, 91%);
   /* background: rgb(39, 171, 131);
   background: linear-gradient(
     30deg,
     rgba(39, 171, 131, 1) 0%,
     rgba(76, 99, 182, 1) 100%
   ); */
-  font-size: 18px;
+  font-size: 10px;
   line-height: 28px;
 }
 p {
   max-width: 530px;
   font-size: 18px;
   line-height: 28px;
-  margin: 0 auto;
+  margin: 20px 0;
 }

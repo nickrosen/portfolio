@@ -1,7 +1,7 @@
 <template>
-  <header>
+  <footer>
     <nav>
-      <ul class="nav-list">
+      <ul class="footer-nav-list">
         <li
           v-for="(link, index) in links"
           :key="index"
@@ -14,12 +14,13 @@
               primaryColor="hsl(210, 16%, 82%)"
               secondaryColor="hsl(210, 16%, 82%)"
             />
-            <span>{{link.title}}</span>
+            <!-- <span>{{link.title}}</span> -->
           </n-link>
         </li>
       </ul>
     </nav>
-  </header>
+    <app-light-switch class="light-switch" />
+  </footer>
 </template>
 
 <script>
@@ -28,9 +29,17 @@ import IconDev from "~/components/svg/IconDev.vue";
 import IconGitHub from "~/components/svg/IconGitHub.vue";
 import IconLinkedIn from "~/components/svg/IconLinkedIn.vue";
 import IconTwitter from "~/components/svg/IconTwitter.vue";
+import AppLightSwitch from "~/components/AppLightSwitch.vue";
 
 export default {
-  components: { IconCodePen, IconDev, IconGitHub, IconTwitter, IconLinkedIn },
+  components: {
+    AppLightSwitch,
+    IconCodePen,
+    IconDev,
+    IconGitHub,
+    IconTwitter,
+    IconLinkedIn
+  },
   data() {
     return {
       links: [
@@ -77,56 +86,49 @@ export default {
 </script>
 
 <style scoped>
-ul.nav-list {
-  display: inline-flex;
-  flex-direction: column;
+footer {
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  padding: 0;
-  margin: 0;
+  justify-content: space-between;
 }
-ul.nav-list > li {
+ul.footer-nav-list {
+  height: 50px;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0;
+  border: 1px solid hsl(227, 42%, 51%);
+  border-radius: 50px;
+  margin: 0;
+  padding: 0 15px;
+}
+ul.footer-nav-list > li {
   list-style-type: none;
+  height: 100%;
 }
 
-ul.nav-list > li > a {
+ul.footer-nav-list > li > a {
   text-decoration: none;
-  color: var(--primary-9);
-  font-size: 14px;
-  padding: 28px 0 0;
+  padding: 0 15px;
+  height: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
 }
-ul.nav-list > li > a > span {
+ul.footer-nav-list > li > a > span {
   /* line-height: 0.9; */
   font-weight: 500;
   margin-top: 2px;
 }
 svg {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
 }
 
-@media only screen and (max-width: 653px) {
-  ul.nav-list {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 0;
-  }
-  ul.nav-list > li > a {
-    font-size: 14px;
-    padding: 0;
-    margin-right: 20px;
-  }
-  ul.nav-list > li > a > span {
-    display: none;
-  }
-  svg {
-    width: 24px;
-    height: 24px;
+@media only screen and (max-width: 410px) {
+  ul.footer-nav-list > li > a {
+    padding: 0 12px;
   }
 }
 </style>
