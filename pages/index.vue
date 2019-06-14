@@ -40,6 +40,12 @@ h1 {
   font-weight: 400;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 440px) {
+  .name {
+    font-size: 18vw;
+  }
+  .description {
+    font-size: 7vw;
+  }
 }
 </style>

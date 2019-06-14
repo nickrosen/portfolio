@@ -37,6 +37,9 @@ export default {
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
 }
+.open > .about-page {
+  display: none;
+}
 .about-page > div {
   /* border: 2px solid; */
 }

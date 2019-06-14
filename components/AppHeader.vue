@@ -24,6 +24,7 @@
           <n-link
             class="nav-link"
             :to="link.url"
+            @click.native="mobileNavState"
           >
             <span>{{link.title}}</span>
           </n-link>

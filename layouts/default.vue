@@ -1,16 +1,18 @@
 <template>
   <div
-    class="layout-grid"
+    class="grid-wrapper"
     :class="theme"
-    :style="`min-height:calc(${windowHeight}px)`"
   >
-    <app-header
-      class="nav"
+    <div
+      class="layout-grid"
       :class="{'open': $store.state.mobileMenu}"
-    />
-    <nuxt class="content" />
-    <app-footer class="footer" />
+      :style="`min-height:calc(${windowHeight}px)`"
+    >
+      <app-header class="nav" />
+      <nuxt class="content" />
+      <app-footer class="footer" />
 
+    </div>
   </div>
 </template>
 
@@ -69,12 +71,14 @@ export default {
   padding: 20px;
   grid-template-rows: auto 1fr auto;
   position: relative;
+  max-width: 1240px;
+  margin: 0 auto;
 }
-.layout-grid.light {
+.grid-wrapper.light {
   background-color: var(--light-background);
   color: var(--light-text);
 }
-.layout-grid.dark {
+.grid-wrapper.dark {
   background-color: var(--dark-background);
   color: var(--dark-text);
 }
@@ -82,7 +86,7 @@ export default {
   grid-row: 1;
   grid-column: 1;
 }
-.nav.open {
+.open > .nav {
   grid-row: 1 / span 2;
   z-index: 2;
   position: relative;
