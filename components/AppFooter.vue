@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <nav>
+    <nav :class="$store.state.theme">
       <ul class="footer-nav-list">
         <li
           v-for="(link, index) in links"
@@ -14,7 +14,6 @@
               primaryColor="hsl(210, 16%, 82%)"
               secondaryColor="hsl(210, 16%, 82%)"
             />
-            <!-- <span>{{link.title}}</span> -->
           </n-link>
         </li>
       </ul>
@@ -100,9 +99,13 @@ ul.footer-nav-list {
   align-items: center;
   padding: 0;
   border: 1px solid hsl(227, 42%, 51%);
+  background-color: hsl(221, 68%, 93%);
   border-radius: 50px;
   margin: 0;
   padding: 0 15px;
+}
+.dark > ul.footer-nav-list {
+  background-color: hsl(224, 67%, 76%);
 }
 ul.footer-nav-list > li {
   list-style-type: none;
@@ -129,6 +132,14 @@ svg {
 @media only screen and (max-width: 410px) {
   ul.footer-nav-list > li > a {
     padding: 0 12px;
+  }
+}
+@media only screen and (max-width: 410px) {
+  ul.footer-nav-list {
+    padding: 0 6px;
+  }
+  ul.footer-nav-list > li > a {
+    padding: 0 8px;
   }
 }
 </style>

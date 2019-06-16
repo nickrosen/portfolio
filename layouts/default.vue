@@ -65,6 +65,9 @@ export default {
 </script>
 
 <style>
+.grid-wrapper {
+  overflow: hidden;
+}
 .layout-grid {
   display: grid;
   grid-gap: 20px;
@@ -85,6 +88,7 @@ export default {
 .nav {
   grid-row: 1;
   grid-column: 1;
+  z-index: 2;
 }
 .open > .nav {
   grid-row: 1 / span 2;
@@ -92,12 +96,15 @@ export default {
   position: relative;
 }
 .content {
-  grid-row: 2;
+  grid-row: 1 / -1;
   grid-column: 1;
+  padding: 60px 0;
+  z-index: 1;
 }
 .footer {
   grid-row: 3;
   grid-column: 1;
+  z-index: 2;
 }
 @media only screen and (max-width: 653px) {
   .layout-grid {

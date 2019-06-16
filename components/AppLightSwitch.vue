@@ -38,10 +38,10 @@ export default {
 
 <style scoped>
 .bulb-icon.light {
-  fill: hsl(209, 14%, 37%);
+  fill: hsl(209, 20%, 25%);
 }
 .bulb-icon.dark {
-  fill: hsl(44, 92%, 63%);
+  fill: hsl(42, 87%, 55%);
 }
 button {
   cursor: pointer;
@@ -54,7 +54,8 @@ button {
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  border: 1px solid hsl(227, 42%, 51%);
+  background-color: hsl(48, 95%, 76%);
+  border: 1px solid hsl(44, 92%, 63%);
   border-radius: 50%;
 }
 button > span {

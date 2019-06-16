@@ -8,7 +8,7 @@
     </n-link>
     <nav :class="$store.state.theme">
       <div class="mobile-menu">
-        <button @click="mobileNavState">
+        <button @click="toggleMobileNav">
           <icon-menu />
           <span>menu</span>
         </button>
@@ -24,7 +24,7 @@
           <n-link
             class="nav-link"
             :to="link.url"
-            @click.native="mobileNavState"
+            @click.native="closeMobileNav"
           >
             <span>{{link.title}}</span>
           </n-link>
@@ -76,14 +76,27 @@ export default {
     };
   },
   methods: {
-    mobileNavState() {
+    toggleMobileNav() {
       this.$store.commit("SET_MOBILE_MENU", !this.$store.state.mobileMenu);
+    },
+    closeMobileNav() {
+      if (this.$store.state.mobileMenu) {
+        this.$store.commit("SET_MOBILE_MENU", !this.$store.state.mobileMenu);
+      }
+      return;
     }
   }
 };
 </script>
 
 <style scoped>
+.mobile-menu > button {
+  background-color: hsl(221, 68%, 93%);
+  border: 1px solid hsl(227, 42%, 51%);
+}
+.dark > .mobile-menu > button {
+  background-color: hsl(224, 67%, 76%);
+}
 .mobile-menu > button > span {
   padding-bottom: 3px;
   padding-left: 10px;
@@ -104,10 +117,13 @@ a.logo > span {
   letter-spacing: -8px;
   position: relative;
   left: -4px;
+  font-style: italic;
 }
+
 a.logo:visited > span {
-  color: #fff;
+  color: hsl(221, 68%, 93%);
 }
+
 header {
   display: flex;
   flex-direction: row;
@@ -119,9 +135,13 @@ ul.nav-list {
   flex-direction: row;
   flex-wrap: wrap;
   padding: 0;
+  background-color: hsl(221, 68%, 93%);
   border: 1px solid hsl(227, 42%, 51%);
   border-radius: 25px;
   margin: 0;
+}
+.dark > ul.nav-list {
+  background-color: hsl(224, 67%, 76%);
 }
 ul.nav-list > li {
   list-style-type: none;
@@ -129,15 +149,15 @@ ul.nav-list > li {
 
 ul.nav-list > li > a {
   text-decoration: none;
-  color: hsl(209, 18%, 30%);
+  color: hsl(209, 20%, 25%);
   font-size: 18px;
   padding: 10px 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-ul.nav-list.dark > li > a {
-  color: hsl(210, 16%, 82%);
+.dark > ul.nav-list > li > a {
+  /* color: hsl(210, 16%, 82%); */
 }
 ul.nav-list > li > a > span {
   /* line-height: 0.9; */
@@ -169,13 +189,19 @@ a.nuxt-link-exact-active.nuxt-link-active {
   ul.nav-list.open {
     display: flex;
     flex-direction: column;
-    background-color: #f1f5f8;
+    background-color: hsl(221, 68%, 93%);
     overflow: hidden;
     position: absolute;
     width: 100%;
     top: 60px;
     left: 0;
     height: calc(100% - 60px);
+  }
+  .dark > ul.nav-list.open {
+    background-color: hsl(210, 24%, 16%);
+  }
+  .dark > ul.nav-list.open > li > a {
+    color: hsl(210, 16%, 82%);
   }
   a.nav-link.nuxt-link-exact-active.nuxt-link-active {
     border-radius: 0;
