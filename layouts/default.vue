@@ -69,7 +69,7 @@ export default {
   overflow: hidden;
 }
 .layout-grid {
-  height: 100vh;
+  height: 100%;
   display: grid;
   grid-gap: 20px;
   padding: 20px;
