@@ -74,9 +74,6 @@ h1 {
   justify-self: center;
   grid-column: 2;
   grid-row: 1;
-  /* height: 100%;
-  background-color: aqua;
-  clip-path: circle(50% at 50% 50%); */
 }
 .hello {
   font-size: 23px;
@@ -94,6 +91,30 @@ h1 {
   font-weight: 400;
 }
 
+@media only screen and (max-width: 767px) {
+  .home-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto 1fr;
+    grid-gap: 20px;
+  }
+  h1 {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+  .l-col {
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    justify-self: end;
+  }
+  .r-col {
+    grid-column: 2;
+    grid-row: 3;
+    position: relative;
+    justify-self: start;
+  }
+}
 @media only screen and (max-width: 480px) {
   .name {
     font-size: 16.3vw;

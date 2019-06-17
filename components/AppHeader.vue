@@ -2,6 +2,7 @@
   <header>
     <n-link
       :to="links[0].url"
+      @click.native="closeMobileNav"
       class="logo"
     >
       <span>NR</span>
@@ -9,7 +10,8 @@
     <nav :class="$store.state.theme">
       <div class="mobile-menu">
         <button @click="toggleMobileNav">
-          <icon-menu />
+          <icon-menu v-show="!$store.state.mobileMenu" />
+          <icon-close v-show="$store.state.mobileMenu" />
           <span>menu</span>
         </button>
       </div>
@@ -38,8 +40,9 @@
 
 <script>
 import IconMenu from "~/components/svg/IconMenu.vue";
+import IconClose from "~/components/svg/IconClose.vue";
 export default {
-  components: { IconMenu },
+  components: { IconClose, IconMenu },
   data() {
     return {
       links: [
