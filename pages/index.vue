@@ -101,6 +101,7 @@ h1 {
   h1 {
     grid-column: 1 / -1;
     grid-row: 2;
+    z-index: 3;
   }
   .l-col {
     grid-column: 1;
