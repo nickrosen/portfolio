@@ -27,7 +27,7 @@ collections:
           widget: "image",
           required: false,
         }
-      - { label: "Tags", name: "tags", widget: "string", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
   - name: "pages" # Used in routes, e.g., /admin/collections/blog
     label: "Pages" # Used in the UI
