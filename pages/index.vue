@@ -78,7 +78,7 @@ h1 {
 .hello {
   font-size: 23px;
   font-weight: 400;
-  color: hsl(162, 63%, 41%);
+  color: hsl(230, 49%, 41%);
 }
 .name {
   font-size: 84px;
