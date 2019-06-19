@@ -1,7 +1,7 @@
 <template>
   <button
     @click="vantaBlack"
-    class="nav-shadow"
+    aria-label="toggle dark/light mode"
   >
     <svg-light
       :class="theme"

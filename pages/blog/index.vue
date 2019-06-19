@@ -51,7 +51,7 @@ export default {
   justify-self: center;
 }
 .post {
-  border-bottom: 1px solid hsl(221, 78%, 86%);
+  border-bottom: 1px solid hsl(156, 73%, 74%);
   position: relative;
 }
 .post > h2 {
@@ -71,9 +71,10 @@ export default {
   list-style-type: none;
   border: 1px solid;
   margin-right: 10px;
-  padding: 4px 8px;
+  padding: 0 8px;
   font-size: 14px;
   font-weight: 700;
+  line-height: 1.6;
 }
 .post-excerpt {
   width: 100%;
@@ -85,7 +86,7 @@ export default {
 }
 .post > a {
   text-decoration: none;
-  background-color: hsl(227, 42%, 51%);
+  background-color: hsl(209, 20%, 25%);
   border-radius: 50px;
   padding: 5px 15px;
   font-size: 16px;

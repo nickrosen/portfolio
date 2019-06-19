@@ -3,23 +3,20 @@
     <n-link
       :to="links[0].url"
       @click.native="closeMobileNav"
-      class="logo nav-shadow"
+      class="logo"
     >
       <span>NR</span>
     </n-link>
     <nav :class="$store.state.theme">
       <div class="mobile-menu">
-        <button
-          class="nav-shadow"
-          @click="toggleMobileNav"
-        >
+        <button @click="toggleMobileNav">
           <icon-menu v-show="!$store.state.mobileMenu" />
           <icon-close v-show="$store.state.mobileMenu" />
           <span>menu</span>
         </button>
       </div>
       <ul
-        class="nav-list nav-shadow"
+        class="nav-list"
         :class="{'open': $store.state.mobileMenu}"
       >
         <li
@@ -142,7 +139,7 @@ ul.nav-list {
   flex-wrap: wrap;
   padding: 0;
   background-color: hsl(221, 68%, 93%);
-  border: 1px solid hsl(227, 42%, 51%);
+  border: 1px solid hsl(224, 67%, 76%);
   border-radius: 25px;
   margin: 0;
 }
@@ -171,7 +168,7 @@ ul.nav-list > li > a > span {
 }
 a.nuxt-link-exact-active.nuxt-link-active {
   color: hsl(221, 68%, 93%);
-  background-color: hsl(227, 42%, 51%);
+  background-color: hsl(228, 45%, 45%);
   border-radius: 50px;
 }
 .mobile-menu {
