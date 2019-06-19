@@ -1,7 +1,7 @@
 <template>
   <footer>
     <nav :class="$store.state.theme">
-      <ul class="footer-nav-list">
+      <ul class="footer-nav-list nav-shadow">
         <li
           v-for="(link, index) in links"
           :key="index"

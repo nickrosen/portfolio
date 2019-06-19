@@ -3,20 +3,23 @@
     <n-link
       :to="links[0].url"
       @click.native="closeMobileNav"
-      class="logo"
+      class="logo nav-shadow"
     >
       <span>NR</span>
     </n-link>
     <nav :class="$store.state.theme">
       <div class="mobile-menu">
-        <button @click="toggleMobileNav">
+        <button
+          class="nav-shadow"
+          @click="toggleMobileNav"
+        >
           <icon-menu v-show="!$store.state.mobileMenu" />
           <icon-close v-show="$store.state.mobileMenu" />
           <span>menu</span>
         </button>
       </div>
       <ul
-        class="nav-list"
+        class="nav-list nav-shadow"
         :class="{'open': $store.state.mobileMenu}"
       >
         <li

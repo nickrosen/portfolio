@@ -1,5 +1,8 @@
 <template>
-  <button @click="vantaBlack">
+  <button
+    @click="vantaBlack"
+    class="nav-shadow"
+  >
     <svg-light
       :class="theme"
       class="bulb-icon"

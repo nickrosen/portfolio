@@ -99,7 +99,7 @@ export default {
 .content {
   grid-row: 1 / -1;
   grid-column: 1;
-  padding: 60px 0;
+  padding: 120px 0 80px;
   z-index: 1;
 }
 .footer {

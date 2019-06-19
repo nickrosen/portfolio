@@ -8,10 +8,9 @@
     >
 
     <div class="about-copy">
-      <p><span class="hi">Hi, </span>my name's Nick Rosen, I'm a web developer based in San Diego, California.</p>
-      <p>I've been building stuff on the web professionally since 2011 and have had the chance to work on a wide range of projects from wordpress themes and plugins to serverless spa's and cloud apps. My favorite thing about this job is the constant need to learn new things to better solve problems.</p>
+      <p><span class="hi">Hi</span> my name's Nick Rosen, I'm a web developer based in San Diego, California. I've been building stuff on the web professionally since 2011 and have had the chance to work on a wide range of projects from wordpress themes and plugins to JavaScript SPA's and cloud apps. My favorite thing about this job is the constant need to learn new things to better solve problems.</p>
       <p>My go to tech stack at the moment is JAM (Javascript API's and Markup). I'm really loving Vue on the front end and either using Netlify or Firebase for continuous integration via GitHub and cloud/serverless functions for the backend.</p>
-      <p>I live in the Sherman Heights neighborhood with my wife Kat and our black lab Cole. In my free time I like to sail, read, and explore San Diego.</p>
+      <p>I live in the Sherman Heights neighborhood with my wife Kat and our black lab Cole. In my free time I like to sail, cook, read, and explore San Diego.</p>
     </div>
   </div>
 </template>
@@ -37,15 +36,14 @@ export default {
   color: hsl(162, 63%, 41%);
   float: left;
   font-size: 75px;
-  line-height: 60px;
-  padding-right: 8px;
-  /* font-style: italic; */
+  line-height: 56px;
+  padding-right: 10px;
+  margin-left: -7px;
 }
 .about-page {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
-  padding-top: 120px;
 }
 .open > .about-page {
   display: none;
@@ -67,7 +65,7 @@ h1 > .name {
 img {
   width: 80%;
   height: auto;
-  background-color: hsl(195, 100%, 85%);
+  background-color: hsl(214, 15%, 91%);
   border-radius: 50%;
   justify-self: center;
   filter: brightness(0.9);
