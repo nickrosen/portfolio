@@ -17,11 +17,14 @@
             {{tag}}
           </li>
         </ul>
-        <div class="post-excerpt">
+        <div
+          class="post-excerpt"
+          :class="$store.state.theme"
+        >
           <p>{{post.body}}</p>
         </div>
         <n-link
-          class="fancy-link"
+          class="link stripe-shadow-half"
           :to="post._path"
         >View Post</n-link>
       </div>
@@ -43,6 +46,9 @@ export default {
 </script>
 
 <style scoped>
+a.link {
+  font-weight: 500;
+}
 .blog-list-page {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -51,7 +57,7 @@ export default {
   justify-self: center;
 }
 .post {
-  border-bottom: 1px solid hsl(156, 73%, 74%);
+  border-bottom: 1px solid hsl(210, 16%, 82%);
   position: relative;
 }
 .post > h2 {
@@ -69,12 +75,13 @@ export default {
 }
 .post > ul > li {
   list-style-type: none;
-  border: 1px solid;
+  border: 1px solid hsl(234, 62%, 26%);
   margin-right: 10px;
   padding: 0 8px;
   font-size: 14px;
   font-weight: 700;
   line-height: 1.6;
+  color: hsl(234, 62%, 26%);
 }
 .post-excerpt {
   width: 100%;
@@ -82,15 +89,15 @@ export default {
   overflow: hidden;
   position: relative;
   height: 5.6em; /* exactly three lines */
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 .post > a {
   text-decoration: none;
-  background-color: hsl(209, 20%, 25%);
+  background-color: hsl(158, 58%, 62%);
   border-radius: 50px;
   padding: 5px 15px;
   font-size: 16px;
-  color: hsl(221, 68%, 93%);
+  color: hsl(170, 97%, 15%);
   position: absolute;
   right: 0;
   bottom: -19px;
@@ -107,6 +114,20 @@ export default {
     to right,
     rgba(255, 255, 255, 0),
     var(--light-background) 50%
+  );
+}
+.post-excerpt.dark:after {
+  content: "";
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  height: 1.2em;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    var(--dark-background) 50%
   );
 }
 </style>

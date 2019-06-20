@@ -44,6 +44,7 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
+  align-items: center;
 }
 .open > .about-page {
   display: none;

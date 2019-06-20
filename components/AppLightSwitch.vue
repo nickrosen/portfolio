@@ -1,6 +1,7 @@
 <template>
   <button
     @click="vantaBlack"
+    :class="theme"
     aria-label="toggle dark/light mode"
   >
     <svg-light
@@ -41,7 +42,7 @@ export default {
 
 <style scoped>
 .bulb-icon.light {
-  fill: hsl(209, 20%, 25%);
+  fill: hsl(210, 24%, 16%);
 }
 .bulb-icon.dark {
   fill: hsl(42, 87%, 55%);
@@ -57,9 +58,11 @@ button {
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  background-color: hsl(48, 95%, 76%);
-  border: 1px solid hsl(44, 92%, 63%);
+  background-color: hsl(44, 92%, 63%);
   border-radius: 50%;
+}
+button.dark {
+  background-color: hsl(210, 24%, 16%);
 }
 button > span {
   color: hsl(209, 61%, 16%);

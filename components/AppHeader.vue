@@ -3,20 +3,23 @@
     <n-link
       :to="links[0].url"
       @click.native="closeMobileNav"
-      class="logo"
+      class="logo stripe-shadow"
     >
       <span>NR</span>
     </n-link>
     <nav :class="$store.state.theme">
       <div class="mobile-menu">
-        <button @click="toggleMobileNav">
+        <button
+          class="stripe-shadow"
+          @click="toggleMobileNav"
+        >
           <icon-menu v-show="!$store.state.mobileMenu" />
           <icon-close v-show="$store.state.mobileMenu" />
           <span>menu</span>
         </button>
       </div>
       <ul
-        class="nav-list"
+        class="nav-list stripe-shadow"
         :class="{'open': $store.state.mobileMenu}"
       >
         <li
@@ -31,7 +34,7 @@
             <span>{{link.title}}</span>
           </n-link>
         </li>
-        <li><a href="mailto:hinickrosen@gmail.com">Contact</a></li>
+        <li><a href="mailto:hinickrosen@gmail.com"><span>Contact</span></a></li>
       </ul>
 
     </nav>
@@ -99,6 +102,7 @@ export default {
 }
 .dark > .mobile-menu > button {
   background-color: hsl(224, 67%, 76%);
+  border: 1px solid hsl(224, 67%, 76%);
 }
 .mobile-menu > button > span {
   padding-bottom: 3px;
@@ -128,15 +132,16 @@ a.logo:visited > span {
 }
 
 header {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+
+ul.nav-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-ul.nav-list {
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   padding: 0;
   background-color: hsl(221, 68%, 93%);
   border: 1px solid hsl(224, 67%, 76%);
@@ -145,6 +150,7 @@ ul.nav-list {
 }
 .dark > ul.nav-list {
   background-color: hsl(224, 67%, 76%);
+  border: 1px solid hsl(224, 67%, 76%);
 }
 ul.nav-list > li {
   list-style-type: none;
@@ -164,7 +170,7 @@ ul.nav-list > li > a {
 }
 ul.nav-list > li > a > span {
   /* line-height: 0.9; */
-  font-weight: 400;
+  font-weight: 500;
 }
 a.nuxt-link-exact-active.nuxt-link-active {
   color: hsl(221, 68%, 93%);
@@ -184,14 +190,39 @@ a.nuxt-link-exact-active.nuxt-link-active {
   align-items: center;
   cursor: pointer;
 }
-
-@media only screen and (max-width: 644px) {
+@media only screen and (max-width: 1144px) {
+  header {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  nav {
+    grid-column: 2 / span 2;
+  }
+}
+@media only screen and (max-width: 878px) {
+  header {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  nav {
+    grid-column: 2 / span 3;
+  }
+}
+@media only screen and (max-width: 780px) {
+  header {
+    grid-template-columns: auto 1fr;
+  }
+}
+@media only screen and (max-width: 670px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
   ul.nav-list {
     display: none;
   }
   ul.nav-list.open {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     background-color: hsl(221, 68%, 93%);
     overflow: hidden;
     position: absolute;

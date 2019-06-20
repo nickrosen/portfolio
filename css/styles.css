@@ -26,6 +26,7 @@
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
+  background-color: hsl(227, 42%, 51%);
 }
 
 body {
@@ -36,16 +37,17 @@ body {
   line-height: 28px;
 }
 p {
-  max-width: 530px;
+  max-width: 580px;
   font-size: 18px;
   line-height: 28px;
   margin: 20px 0;
 }
-/* .nav-shadow {
-  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
-    0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
-} */
+
 .stripe-shadow {
   box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
     0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+}
+.stripe-shadow-half {
+  box-shadow: 0 6px 13px -3px rgba(50, 50, 93, 0.25),
+    0 4px 8px -4px rgba(0, 0, 0, 0.3), 0 -3px 8px -3px rgba(0, 0, 0, 0.025);
 }

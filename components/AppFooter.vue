@@ -1,7 +1,7 @@
 <template>
   <footer>
     <nav :class="$store.state.theme">
-      <ul class="footer-nav-list">
+      <ul class="footer-nav-list stripe-shadow">
         <li
           v-for="(link, index) in links"
           :key="index"
@@ -18,7 +18,7 @@
         </li>
       </ul>
     </nav>
-    <app-light-switch class="light-switch" />
+    <app-light-switch class="light-switch stripe-shadow" />
   </footer>
 </template>
 
@@ -86,17 +86,33 @@ export default {
 
 <style scoped>
 footer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+@media only screen and (max-width: 840px) {
+  footer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 626px) {
+  footer {
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 20px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  footer {
+    grid-template-columns: 1fr auto;
+  }
 }
 ul.footer-nav-list {
   height: 50px;
-  display: inline-flex;
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
   padding: 0;
   border: 1px solid hsl(227, 42%, 51%);
   background-color: hsl(221, 68%, 93%);
@@ -106,6 +122,7 @@ ul.footer-nav-list {
 }
 .dark > ul.footer-nav-list {
   background-color: hsl(224, 67%, 76%);
+  border: 1px solid hsl(224, 67%, 76%);
 }
 ul.footer-nav-list > li {
   list-style-type: none;
@@ -114,7 +131,6 @@ ul.footer-nav-list > li {
 
 ul.footer-nav-list > li > a {
   text-decoration: none;
-  padding: 0 15px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -128,18 +144,7 @@ svg {
   width: 24px;
   height: 24px;
 }
-
-@media only screen and (max-width: 410px) {
-  ul.footer-nav-list > li > a {
-    padding: 0 12px;
-  }
-}
-@media only screen and (max-width: 410px) {
-  ul.footer-nav-list {
-    padding: 0 6px;
-  }
-  ul.footer-nav-list > li > a {
-    padding: 0 8px;
-  }
+.light-switch {
+  justify-self: end;
 }
 </style>
