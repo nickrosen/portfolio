@@ -1,32 +1,17 @@
 <template>
   <div class="blog-list-page">
-    <div>
-      <div>
-        <h4>Search Posts</h4>
-      </div>
-      <div>
-        <h4>Category Filter</h4>
-      </div>
-      <div>
-        <h4>Get Email Updates</h4>
-      </div>
-    </div>
     <div class="post-list">
-      <div
+      <article
         class="post"
         v-for="(post, index) in blogPosts"
         :key="index"
       >
-        <h2>{{post.title}}</h2>
+        <h2>
+          <n-link :to="post._path">
+            {{post.title}}
+          </n-link>
+        </h2>
         <h4>{{post.date}}</h4>
-        <ul>
-          <li
-            v-for="(tag, index) in post.tags"
-            :key="index"
-          >
-            {{tag}}
-          </li>
-        </ul>
         <div
           class="post-excerpt"
           :class="$store.state.theme"
@@ -40,7 +25,7 @@
           <span>View Post</span>
           <icon-right-arrow />
         </n-link>
-      </div>
+      </article>
     </div>
   </div>
 </template>
@@ -80,47 +65,35 @@ a.post-link {
 a.post-link > span {
   padding-right: 8px;
 }
-.blog-list-page {
-  display: grid;
-  grid-template-columns: auto 1fr;
-}
-.post-list {
-  justify-self: center;
-}
+
 .post {
   border-bottom: 1px solid hsl(210, 16%, 82%);
   position: relative;
-  margin-bottom: 60px;
+  margin: 0 auto 80px;
+  max-width: 600px;
 }
 .post > h2 {
   margin: 0;
-  font-weight: 900;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.25;
+}
+.post > h2 > a {
+  color: hsl(228, 45%, 45%);
+  text-decoration-color: hsl(156, 73%, 74%);
 }
 .post > h4 {
-  font-weight: 300;
-  margin: 6px 0 12px;
-}
-.post > ul {
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-.post > ul > li {
-  list-style-type: none;
-  border: 1px solid hsl(234, 62%, 26%);
-  margin-right: 10px;
-  padding: 0 8px;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.6;
-  color: hsl(234, 62%, 26%);
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 500;
+  margin: 24px 0 -6px;
 }
 .post-excerpt {
   width: 100%;
-  max-width: 530px;
+  max-width: 600px;
   overflow: hidden;
   position: relative;
-  height: 5.6em; /* exactly three lines */
+  height: 5.1em; /* exactly three lines */
   margin-bottom: 30px;
 }
 
