@@ -62,7 +62,7 @@ button {
   border-radius: 50%;
 }
 button.dark {
-  background-color: hsl(210, 24%, 16%);
+  background-color: hsl(230, 49%, 41%);
 }
 button > span {
   color: hsl(209, 61%, 16%);

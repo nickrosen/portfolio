@@ -112,5 +112,8 @@ export default {
     grid-gap: 10px;
     padding: 10px;
   }
+  .footer {
+    margin-bottom: 20px;
+  }
 }
 </style>

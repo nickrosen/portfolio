@@ -125,6 +125,7 @@ a.logo > span {
   position: relative;
   left: -4px;
   font-style: italic;
+  color: hsl(221, 68%, 93%) !important;
 }
 
 a.logo:visited > span {

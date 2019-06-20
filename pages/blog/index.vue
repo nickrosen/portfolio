@@ -1,6 +1,16 @@
 <template>
   <div class="blog-list-page">
-    <div>sidebar</div>
+    <div>
+      <div>
+        <h4>Search Posts</h4>
+      </div>
+      <div>
+        <h4>Category Filter</h4>
+      </div>
+      <div>
+        <h4>Get Email Updates</h4>
+      </div>
+    </div>
     <div class="post-list">
       <div
         class="post"
@@ -24,16 +34,23 @@
           <p>{{post.body}}</p>
         </div>
         <n-link
-          class="link stripe-shadow-half"
+          class="post-link stripe-shadow-half"
           :to="post._path"
-        >View Post</n-link>
+        >
+          <span>View Post</span>
+          <icon-right-arrow />
+        </n-link>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import IconRightArrow from "~/components/svg/IconRightArrow.vue";
 export default {
+  components: {
+    IconRightArrow
+  },
   computed: {
     blogPosts() {
       return this.$store.state.blogPosts;
@@ -46,8 +63,22 @@ export default {
 </script>
 
 <style scoped>
-a.link {
+a.post-link {
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  background-color: hsl(158, 58%, 62%);
+  border-radius: 50px;
+  padding: 5px 15px;
+  font-size: 16px;
+  color: hsl(170, 97%, 15%);
+  position: absolute;
+  right: 0;
+  bottom: -19px;
+}
+a.post-link > span {
+  padding-right: 8px;
 }
 .blog-list-page {
   display: grid;
@@ -59,6 +90,7 @@ a.link {
 .post {
   border-bottom: 1px solid hsl(210, 16%, 82%);
   position: relative;
+  margin-bottom: 60px;
 }
 .post > h2 {
   margin: 0;
@@ -91,17 +123,7 @@ a.link {
   height: 5.6em; /* exactly three lines */
   margin-bottom: 30px;
 }
-.post > a {
-  text-decoration: none;
-  background-color: hsl(158, 58%, 62%);
-  border-radius: 50px;
-  padding: 5px 15px;
-  font-size: 16px;
-  color: hsl(170, 97%, 15%);
-  position: absolute;
-  right: 0;
-  bottom: -19px;
-}
+
 .post-excerpt:after {
   content: "";
   text-align: right;
