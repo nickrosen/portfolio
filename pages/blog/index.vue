@@ -53,11 +53,11 @@ a.post-link {
   display: flex;
   align-items: center;
   text-decoration: none;
-  background-color: hsl(158, 58%, 62%);
+  background-color: hsl(211, 12%, 43%);
   border-radius: 50px;
   padding: 5px 15px;
   font-size: 16px;
-  color: hsl(170, 97%, 15%);
+  color: hsl(216, 33%, 97%);
   position: absolute;
   right: 0;
   bottom: -19px;

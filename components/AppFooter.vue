@@ -114,15 +114,15 @@ ul.footer-nav-list {
   align-items: center;
   justify-content: space-between;
   padding: 0;
-  border: 1px solid hsl(227, 42%, 51%);
+  border: 1px solid hsl(224, 67%, 76%);
   background-color: hsl(221, 68%, 93%);
   border-radius: 50px;
   margin: 0;
   padding: 0 15px;
 }
 .dark > ul.footer-nav-list {
-  background-color: hsl(224, 67%, 76%);
-  border: 1px solid hsl(224, 67%, 76%);
+  background-color: hsla(216, 33%, 97%, 0.12);
+  border: 1px solid hsl(227, 50%, 59%);
 }
 ul.footer-nav-list > li {
   list-style-type: none;

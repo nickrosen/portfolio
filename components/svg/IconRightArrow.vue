@@ -27,9 +27,9 @@ svg {
   width: auto;
 }
 .primary {
-  fill: hsl(166, 72%, 28%);
+  fill: hsl(211, 13%, 65%);
 }
 .secondary {
-  fill: hsl(158, 58%, 62%);
+  fill: hsl(211, 12%, 43%);
 }
 </style>
