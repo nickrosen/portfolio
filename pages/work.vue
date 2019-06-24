@@ -102,7 +102,7 @@ export default {
 
 <style scoped>
 .desc {
-  grid-column: span 2;
+  grid-column: 1 / -1;
 }
 .work-img {
   grid-column: 1 / -1;
@@ -115,24 +115,20 @@ export default {
   padding-bottom: 40px;
   margin: 20px 0 40px;
 }
-.summary-work-item {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: 1fr 1fr;
-  padding-bottom: 40px;
-  margin: 20px 0 40px;
-}
 img {
   width: 100%;
   height: auto;
 }
 p {
   margin-top: 10px;
+  width: 100%;
+  max-width: 600px;
 }
 .work-title {
   font-family: "IBM Plex Mono", monospace;
   font-weight: 400;
   margin: 0;
+  grid-column: 1 / -1;
 }
 .subheading {
   margin: 0;
@@ -142,5 +138,14 @@ p {
   color: hsl(211, 12%, 43%);
   border-bottom: 1px solid hsl(210, 16%, 82%);
   display: inline-block;
+}
+@media only screen and (max-width: 940px) {
+  .work-item {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr;
+    padding-bottom: 40px;
+    margin: 20px 0 40px;
+  }
 }
 </style>
