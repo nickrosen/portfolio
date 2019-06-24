@@ -1,7 +1,7 @@
 <template>
   <footer>
     <nav :class="$store.state.theme">
-      <ul class="footer-nav-list stripe-shadow">
+      <ul class="footer-nav-list">
         <li
           v-for="(link, index) in links"
           :key="index"
@@ -18,7 +18,7 @@
         </li>
       </ul>
     </nav>
-    <app-light-switch class="light-switch stripe-shadow" />
+    <app-light-switch class="light-switch" />
   </footer>
 </template>
 
@@ -121,7 +121,7 @@ ul.footer-nav-list {
   padding: 0 15px;
 }
 .dark > ul.footer-nav-list {
-  background-color: hsla(216, 33%, 97%, 0.12);
+  background-color: var(--dark-bg-1);
   border: 1px solid hsl(227, 50%, 59%);
 }
 ul.footer-nav-list > li {

@@ -7,7 +7,7 @@
         class="logo-link"
         :class="$store.state.theme"
       >
-        <span class="icon stripe-shadow">
+        <span class="icon">
           <span class="initials">NR</span>
         </span>
         <span
@@ -18,17 +18,14 @@
     </div>
     <nav :class="$store.state.theme">
       <div class="mobile-menu">
-        <button
-          class="stripe-shadow"
-          @click="toggleMobileNav"
-        >
+        <button @click="toggleMobileNav">
           <icon-menu v-show="!$store.state.mobileMenu" />
           <icon-close v-show="$store.state.mobileMenu" />
           <span>menu</span>
         </button>
       </div>
       <ul
-        class="nav-list stripe-shadow"
+        class="nav-list"
         :class="{'open': $store.state.mobileMenu}"
       >
         <li
@@ -110,11 +107,15 @@ export default {
 <style scoped>
 .mobile-menu > button {
   background-color: hsl(221, 68%, 93%);
-  border: 1px solid hsl(227, 42%, 51%);
+  border: 1px solid var(--indigo-6);
 }
 .dark > .mobile-menu > button {
-  background-color: hsl(224, 67%, 76%);
-  border: 1px solid hsl(224, 67%, 76%);
+  background-color: var(--dark-bg-1);
+  border: 1px solid var(--indigo-6);
+  color: var(--indigo-4);
+}
+.dark > .mobile-menu > button > svg {
+  fill: var(--indigo-5);
 }
 .mobile-menu > button > span {
   padding-bottom: 3px;
@@ -126,16 +127,16 @@ a.logo-link {
   align-items: center;
 }
 a.logo-link.dark > .icon {
-  background-color: hsla(216, 33%, 97%, 0.12);
-  border: 1px solid hsl(227, 50%, 59%);
-  color: hsl(227, 42%, 51%);
+  background-color: var(--dark-bg-1);
+  border: 1px solid var(--indigo-6);
+  color: var(--indigo-6);
 }
 a.logo-link.nuxt-link-exact-active.nuxt-link-active > .icon {
   background-color: hsl(224, 67%, 76%);
 }
 a.logo-link.dark.nuxt-link-exact-active.nuxt-link-active > .icon {
-  background-color: hsla(216, 33%, 97%, 0.12);
-  color: hsl(227, 42%, 51%);
+  background-color: var(--dark-bg-1);
+  color: var(--indigo-6);
 }
 a.logo-link > .icon {
   height: 50px;
@@ -181,8 +182,8 @@ ul.nav-list {
   margin: 0;
 }
 .dark > ul.nav-list {
-  background-color: hsla(216, 33%, 97%, 0.12);
-  border: 1px solid hsl(227, 42%, 51%);
+  background-color: var(--dark-bg-1);
+  border: 1px solid var(--indigo-6);
 }
 ul.nav-list > li {
   list-style-type: none;
@@ -211,7 +212,7 @@ a.nav-link.nuxt-link-exact-active.nuxt-link-active {
 }
 .dark > ul.nav-list > li > a.nuxt-link-exact-active.nuxt-link-active {
   color: hsl(216, 33%, 97%);
-  background-color: hsl(227, 42%, 51%);
+  background-color: var(--indigo-6);
   border-radius: 50px;
 }
 .mobile-menu {
@@ -219,7 +220,7 @@ a.nav-link.nuxt-link-exact-active.nuxt-link-active {
 }
 .mobile-menu > button {
   height: 50px;
-  border: 1px solid hsl(227, 42%, 51%);
+  border: 1px solid var(--indigo-6);
   border-radius: 50px;
   padding: 0 30px;
   font-size: 18px;
@@ -274,9 +275,11 @@ a.nav-link.nuxt-link-exact-active.nuxt-link-active {
   .dark > ul.nav-list.open > li > a {
     color: hsl(210, 16%, 82%);
   }
-  a.nav-link.nuxt-link-exact-active.nuxt-link-active {
+  a.nav-link.nuxt-link-exact-active.nuxt-link-active,
+  .dark > ul.nav-list > li > a.nuxt-link-exact-active.nuxt-link-active {
     border-radius: 0;
   }
+
   .mobile-menu {
     display: block;
   }

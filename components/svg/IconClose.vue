@@ -1,6 +1,7 @@
 <template>
 
   <svg
+    :class="$store.state.theme"
     width="10px"
     height="10px"
     viewBox="0 0 10 10"
@@ -14,11 +15,11 @@
       stroke-width="1"
       fill="none"
       fill-rule="evenodd"
+      class="x-fill"
     >
       <g
         id="icon-close"
         transform="translate(-1.000000, -1.000000)"
-        fill="#000000"
         fill-rule="nonzero"
       >
         <path
@@ -38,5 +39,8 @@ export default {};
 svg {
   height: 17px;
   width: auto;
+}
+.dark > .x-fill {
+  fill: var(--indigo-5);
 }
 </style>
