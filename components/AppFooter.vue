@@ -6,7 +6,11 @@
           v-for="(link, index) in links"
           :key="index"
         >
-          <n-link :to="link.url">
+          <a
+            :href="link.url"
+            target="_blank"
+            :aria-label="link.title"
+          >
             <component
               :is="link.icon"
               :height="link.height"
@@ -14,7 +18,7 @@
               primaryColor="hsl(210, 16%, 82%)"
               secondaryColor="hsl(210, 16%, 82%)"
             />
-          </n-link>
+          </a>
         </li>
       </ul>
     </nav>
@@ -43,35 +47,35 @@ export default {
     return {
       links: [
         {
-          url: "/",
+          url: "https://twitter.com/NickRosenSD",
           title: "Twitter",
           icon: "icon-twitter",
           height: "auto",
           width: "20px"
         },
         {
-          url: "/contact",
+          url: "https://dev.to/nickrosensd",
           title: "DEV.to",
           icon: "icon-dev",
           height: "auto",
           width: "20px"
         },
         {
-          url: "/about",
+          url: "https://www.linkedin.com/in/nick-rosen-720a989/",
           title: "LinkedIn",
           icon: "icon-linked-in",
           height: "auto",
           width: "20px"
         },
         {
-          url: "/work",
+          url: "https://codepen.io/nickrosen/#",
           title: "CodePen",
           icon: "icon-code-pen",
           height: "auto",
           width: "20px"
         },
         {
-          url: "/blog",
+          url: "https://github.com/nickrosen",
           title: "GitHub",
           icon: "icon-git-hub",
           height: "auto",
