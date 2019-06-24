@@ -3,7 +3,7 @@
     <h1 class="title">{{title}}</h1>
     <p class="date">Posted by {{author}} on {{date}}</p>
     <div class="body" v-html="$md.render(body)"/>
-    <p class="back"><a class="back-link" @click="$router.back()">Back</a></p>
+    <a class="back-link" @click="$router.back()">Back</a>
   </div>
 </template>
 
@@ -30,4 +30,13 @@ export default {
 </script>
 
 <style scoped>
+.body {
+  margin: 10px 0;
+  width: 100%;
+  max-width: 600px;
+}
+.back-link {
+  cursor: pointer;
+  font-weight: bold;
+}
 </style>

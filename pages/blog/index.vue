@@ -93,7 +93,7 @@ a.post-link > span {
   max-width: 600px;
   overflow: hidden;
   position: relative;
-  height: 5.1em; /* exactly three lines */
+  height: 6.1em; /* exactly three lines */
   margin-bottom: 30px;
 }
 
