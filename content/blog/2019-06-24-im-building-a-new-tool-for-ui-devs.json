@@ -1,0 +1,6 @@
+{
+  "title": "I'm building a new tool for UI Dev's",
+  "date": "24th June 2019",
+  "author": "Nick Rosen",
+  "body": "I got a bit stuck in the loop of jamming through quick tutorials to learn new skills but wasn't really building anything useful.  I decided to break through it by building a tool that saves me time in my workflow.\n\nI'll setup a custom url at some point but for the moment you can find it here <https://ecstatic-volhard-0317b0.netlify.com/>\n\nThe first built functionality is basically a bunch of iframes set at different device dimensions that can be scaled so you cna see a bunch of layout sizes at a time for your project in one tab.  This functionality is mostly done, I have a state management issue to fix with scaling and layout cleanup for the range inputs.  I was pleasantly surpirsed that hot reloading of my dev server worked fine through an iframe on another dev server.\n\nNext feature will be ability to write media queries at each size with a quick copy paste available."
+}
