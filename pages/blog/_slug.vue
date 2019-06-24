@@ -30,6 +30,9 @@ export default {
 </script>
 
 <style scoped>
+.post {
+  margin: 0 auto;
+}
 .body {
   margin: 10px 0;
   width: 100%;
