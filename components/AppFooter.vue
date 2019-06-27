@@ -8,6 +8,7 @@
         >
           <a
             :href="link.url"
+            rel="noopener"
             target="_blank"
             :aria-label="link.title"
           >
