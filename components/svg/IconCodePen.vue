@@ -11,14 +11,12 @@
     <title>Fill 3</title>
     <desc>Created with Sketch.</desc>
     <g
-      id="Page-1"
       stroke="none"
       stroke-width="1"
       fill="none"
       fill-rule="evenodd"
     >
       <g
-        id="Button-Black"
         transform="translate(-89.000000, -89.000000)"
         fill="#1A1919"
       >

@@ -15,7 +15,6 @@
       ></polygon>
     </defs>
     <g
-      id="Page-1"
       stroke="none"
       stroke-width="1"
       fill="none"

@@ -11,7 +11,6 @@
     <title>github</title>
     <desc>Created with Sketch.</desc>
     <g
-      id="Page-1"
       stroke="none"
       stroke-width="1"
       fill="none"
