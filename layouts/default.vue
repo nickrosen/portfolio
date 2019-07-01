@@ -78,6 +78,9 @@ export default {
   max-width: 1240px;
   margin: 0 auto;
 }
+.layout-grid.open > .content {
+  display: none;
+}
 .grid-wrapper.light {
   background-color: var(--light-background);
   color: var(--light-text);

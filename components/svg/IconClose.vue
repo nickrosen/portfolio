@@ -36,6 +36,9 @@ svg {
   height: 17px;
   width: auto;
 }
+.light > .x-fill {
+  fill: var(--light-text);
+}
 .dark > .x-fill {
   fill: var(--indigo-5);
 }
