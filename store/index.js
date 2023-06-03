@@ -42,16 +42,6 @@ export const actions = {
     await dispatch("getPages");
     // await dispatch("getThemePreference");
   },
-  async getBlogPosts({ state, commit }) {
-    const context = await require.context("~/content/blog/", false, /\.json$/);
-
-    const searchposts = await context.keys().map(key => ({
-      ...context(key),
-      _path: `/blog/${key.replace(".json", "").replace("./", "")}`
-    }));
-
-    commit("SET_POSTS", searchposts.reverse());
-  },
   async getPages({ state, commit }) {
     const context = await require.context("~/content/pages/", false, /\.json$/);
 
