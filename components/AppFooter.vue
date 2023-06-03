@@ -51,19 +51,9 @@ export default {
           icon: "icon-twitter"
         },
         {
-          url: "https://dev.to/nickrosensd",
-          title: "DEV.to",
-          icon: "icon-dev"
-        },
-        {
           url: "https://www.linkedin.com/in/nick-rosen-720a989/",
           title: "LinkedIn",
           icon: "icon-linked-in"
-        },
-        {
-          url: "https://codepen.io/nickrosen/#",
-          title: "CodePen",
-          icon: "icon-code-pen"
         },
         {
           url: "https://github.com/nickrosen",
@@ -101,6 +91,7 @@ footer {
 }
 ul.footer-nav-list {
   height: 50px;
+  width: 160px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

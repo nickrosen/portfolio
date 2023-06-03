@@ -78,13 +78,6 @@ export default {
           icon: "svg-work",
           height: "30px",
           width: "auto"
-        },
-        {
-          url: "/blog",
-          title: "Blog",
-          icon: "svg-blog",
-          height: "30px",
-          width: "auto"
         }
       ],
       fullScreenNav: false

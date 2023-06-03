@@ -1,9 +1,0 @@
-{
-  "title": "Learning Data Viz by Doing Part 1",
-  "date": "11th August 2019",
-  "author": "Nick Rosen",
-  "tags": [
-    "data-viz"
-  ],
-  "body": "I'm a big fan of learning by doing and I'm interested in improving my data viz skills so I thought I'd try building a data visualization here.\n\nI'll be building a San Diego historical weather visualization because I feel like our seasons are getting pushed out firther in the year and like it's generally getting warmer.  I'd like to see if my feelings reflect reality and  what climate change actually looks like in San Diego.  I'll be building this at <a href=\"https://nickrosen.codes/data-viz/sd-weather\" target=\"_blank\">/data-viz/sd-weather</a>.\n\nStep 1 is to break the problem down into smaller chunks.  I've listed them in the order I'll attack them but I think I may find I need to shuffle the order in the future.\n\n\\- Collect Historical Weather Data\n\n\\- Get it onto the page\n\n\\- Figure out how to display it in a way that makes sense\n\n\\- Build the display either using SVG or a visualization library like D3."
-}
