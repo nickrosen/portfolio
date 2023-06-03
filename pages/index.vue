@@ -7,13 +7,8 @@
       ></div>
     </div>
     <h1>
-      <span
-        class="hello"
-        :class="$store.state.theme"
-      >Hello, my name is </span>
       <span class="name">Nick Rosen </span>
-      <span class="description">I'm a web app developer </span>
-      <span class="description">based in San Diego, CA</span>
+      <span class="description">Software Engineer</span>
     </h1>
     <div class="r-col">
       <div
